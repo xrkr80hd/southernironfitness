@@ -69,15 +69,31 @@ export default function Home() {
             <small>Fitness · Woodworth, LA</small>
           </span>
         </a>
-        <nav aria-label="Main navigation">
+        <nav className="desktop-nav" aria-label="Main navigation">
           <a href="#about">The Gym</a>
           <a href="#training">Training</a>
           <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="button button--small" href={gymdeskUrl} target="_blank" rel="noreferrer">
+        <a className="button button--small header-cta" href={gymdeskUrl} target="_blank" rel="noreferrer">
           Join the Founders Club
         </a>
+        <details className="mobile-menu">
+          <summary aria-label="Open navigation">
+            <span />
+            <span />
+            <span />
+          </summary>
+          <div className="mobile-menu-panel">
+            <a href="#about">The Gym</a>
+            <a href="#training">Training</a>
+            <a href="#gymdesk">Membership</a>
+            <a href="#contact">Contact</a>
+            <a className="button button--small" href={gymdeskUrl} target="_blank" rel="noreferrer">
+              Member Login
+            </a>
+          </div>
+        </details>
       </header>
 
       <section className="hero" id="top">
