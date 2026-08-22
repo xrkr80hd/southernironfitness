@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-const gymdeskUrl = "https://southern-iron-fitness.gymdesk.com/login";
+const gymdeskLoginUrl = "https://southern-iron-fitness.gymdesk.com/login";
+const gymdeskSignupUrl = "https://southern-iron-fitness.gymdesk.com/signup";
 
 const PhotoBlock = ({
   label,
@@ -75,8 +76,8 @@ export default function Home() {
           <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="button button--small header-cta" href={gymdeskUrl} target="_blank" rel="noreferrer">
-          Join the Founders Club
+        <a className="button button--small header-cta" href={gymdeskSignupUrl} target="_blank" rel="noreferrer">
+          Sign Up
         </a>
         <details className="mobile-menu">
           <summary aria-label="Open navigation">
@@ -89,8 +90,7 @@ export default function Home() {
             <a href="#training">Training</a>
             <a href="#gymdesk">Membership</a>
             <a href="#contact">Contact</a>
-            <a className="button button--small" href={gymdeskUrl} target="_blank" rel="noreferrer">
-              Member Login
+            <a className="button button--small" href={gymdeskLoginUrl} target="_blank" rel="noreferrer">Member Login
             </a>
           </div>
         </details>
@@ -108,8 +108,8 @@ export default function Home() {
             purpose, push harder, and build real results.
           </p>
           <div className="button-row">
-            <a className="button" href={gymdeskUrl} target="_blank" rel="noreferrer">
-              Reserve My Membership
+            <a className="button" href={gymdeskSignupUrl} target="_blank" rel="noreferrer">
+              Sign Up
             </a>
             <a className="text-link" href="#about">
               Explore the gym <span>↓</span>
@@ -257,8 +257,8 @@ export default function Home() {
               <span>Family $65/mo</span>
             </div>
           </div>
-          <a className="gymdesk-action" href={gymdeskUrl} target="_blank" rel="noreferrer">
-            Continue in Gymdesk →
+          <a className="gymdesk-action" href={gymdeskSignupUrl} target="_blank" rel="noreferrer">
+            Sign Up Through Gymdesk →
           </a>
           <p className="embed-note">
             Members and founding sign-ups can use the Gymdesk portal.
@@ -281,7 +281,7 @@ export default function Home() {
           membership details, and pre-launch offers.
         </p>
         <div className="button-row button-row--center">
-          <a className="button" href={gymdeskUrl} target="_blank" rel="noreferrer">
+          <a className="button" href={gymdeskSignupUrl} target="_blank" rel="noreferrer">
             Join Through Gymdesk
           </a>
           <a className="button button--outline" href="mailto:info@southernironfitness.com">
@@ -337,7 +337,7 @@ export default function Home() {
         <div>
           <a href="#">Instagram</a>
           <a href="#">Facebook</a>
-          <a href={gymdeskUrl} target="_blank" rel="noreferrer">Member Login</a>
+          <a href={gymdeskLoginUrl} target="_blank" rel="noreferrer">Member Login</a>
         </div>
       </footer>
     </main>
