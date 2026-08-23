@@ -2,6 +2,10 @@ import Image from "next/image";
 
 const gymdeskLoginUrl = "https://southern-iron-fitness.gymdesk.com/login";
 const gymdeskSignupUrl = "https://southern-iron-fitness.gymdesk.com/signup";
+const googleMapsUrl =
+  "https://www.google.com/maps/search/?api=1&query=9338%20Highway%20165%20South%2C%20Suite%20F%2C%20Woodworth%2C%20LA%2071485";
+const googleMapsEmbedUrl =
+  "https://maps.google.com/maps?hl=en&q=9338%20Highway%20165%20South%2C%20Suite%20F%2C%20Woodworth%2C%20LA%2071485&z=16&output=embed";
 
 const PhotoBlock = ({
   label,
@@ -328,26 +332,27 @@ export default function Home() {
           <h2>Southern Iron Fitness</h2>
           <a
             className="address-link"
-            href="https://www.google.com/maps/search/?api=1&query=9338%20Highway%20165%20South%2C%20Suite%20F%2C%20Woodworth%2C%20LA%2071485"
+            href={googleMapsUrl}
             target="_blank"
             rel="noreferrer"
           >
             9338 Highway 165 South, Suite F
             <span>Woodworth, LA 71485</span>
           </a>
-          <div className="location-actions">
-            <a className="text-link" href="mailto:info@southernironfitness.com">
-              Ask a question <span>→</span>
-            </a>
-          </div>
         </div>
-        <iframe
-          className="map-frame"
-          title="Map to Southern Iron Fitness"
-          src="https://www.google.com/maps?q=9338%20Highway%20165%20South%2C%20Suite%20F%2C%20Woodworth%2C%20LA%2071485&output=embed"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+        <div className="map-panel">
+          <iframe
+            className="map-frame"
+            title="Map to Southern Iron Fitness"
+            src={googleMapsEmbedUrl}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+          <a className="map-open-link" href={googleMapsUrl} target="_blank" rel="noreferrer">
+            Open in Google Maps <span>→</span>
+          </a>
+        </div>
       </section>
 
       <footer>
@@ -364,7 +369,7 @@ export default function Home() {
         </div>
         <p>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=9338%20Highway%20165%20South%2C%20Suite%20F%2C%20Woodworth%2C%20LA%2071485"
+            href={googleMapsUrl}
             target="_blank"
             rel="noreferrer"
           >

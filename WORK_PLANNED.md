@@ -30,3 +30,11 @@
 - Intended result: `npm run lint -- --max-warnings=0`, `npx tsc --noEmit`, and `npm run build` pass before push.
 - Dependencies: Existing GitHub remote and Vercel Git integration.
 - Status: Completed locally; push triggers Vercel deployment
+
+## 2026-08-23 - Repair Find Us map display
+
+- Task: Fix the bottom Find Us section so the address is paired with a visible Google Maps embed and an open-in-Google-Maps path, and remove the Ask a question link under the address.
+- Affected area: `app/page.tsx`, `app/globals.css`, location section markup/styling, local validation, and Git deployment trigger.
+- Intended result: The location section shows Southern Iron Fitness, the address, a usable map, and a direct Google Maps link without the extra ask-question CTA under the address.
+- Dependencies: Existing address and Google Maps URL; GitHub push triggers Vercel deployment.
+- Status: Completed

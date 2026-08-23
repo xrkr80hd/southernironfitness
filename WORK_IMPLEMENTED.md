@@ -1,5 +1,25 @@
 # Work Implemented
 
+## 2026-08-23 - Find Us map repair
+
+- Completed task: Repaired the bottom Find Us location section map display and removed the extra Ask a question link under the address.
+- Files affected:
+  - `app/page.tsx`
+  - `app/globals.css`
+  - `WORK_PLANNED.md`
+  - `WORK_IMPLEMENTED.md`
+- Result:
+  - Added shared Google Maps constants for the address link, footer link, and embed.
+  - Replaced the old small map iframe with a larger map panel and direct "Open in Google Maps" link.
+  - Removed the `Ask a question` link block from under the address.
+- Verification:
+  - `npm run lint -- --max-warnings=0`: passed.
+  - `npx tsc --noEmit`: passed.
+  - `npm run build`: passed.
+  - Production server on `http://localhost:3000`: returned `200`.
+  - Browser rendered check: Find Us section has a visible 460x260 map iframe, visible Google Maps link, no ask-question link under the address, and no relevant console warnings/errors.
+- Architectural decisions: Keep location behavior as a static marketing-site section using Google Maps URLs; no new API key or map package added.
+
 ## 2026-08-22 - GitHub release completed
 
 - Completed task: Committed the validated website repair set and pushed `main` to `origin`.
