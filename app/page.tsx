@@ -73,7 +73,6 @@ export default function Home() {
         <nav className="desktop-nav" aria-label="Main navigation">
           <a href="#about">The Gym</a>
           <a href="#training">Training</a>
-          <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
         </nav>
         <a className="button button--small header-cta" href={gymdeskSignupUrl} target="_blank" rel="noreferrer">
@@ -123,9 +122,12 @@ export default function Home() {
         </div>
         <PhotoBlock
           tall
-          label="Hero photo · 16:10 landscape"
-          title="Post your strongest gym image here"
-          description="Use a wide, dramatic photo of the finished weight floor, preferably with one athlete lifting. Leave darker open space on the left for headline text."
+          label="Southern Iron weight floor"
+          title="Real equipment. Real work."
+          description="A serious strength floor built for focused training, steady progress, and Woodworth's strongest community."
+          imageSrc="/photos/fitness-foto.jpeg"
+          imageAlt="Southern Iron Fitness weight floor with benches, dumbbells, mirrors, and cable equipment"
+          imagePosition="center"
         />
       </section>
 
@@ -139,8 +141,8 @@ export default function Home() {
             Southern Iron Fitness is being built around excellent equipment,
             focused training, and a community that expects more from itself.
           </p>
-          <a className="text-link" href="#gallery">
-            Follow the build-out <span>→</span>
+          <a className="text-link" href="#training">
+            See the training areas <span>→</span>
           </a>
         </div>
       </section>
@@ -335,8 +337,6 @@ export default function Home() {
           </a>
         </p>
         <div>
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
           <a href={gymdeskLoginUrl} target="_blank" rel="noreferrer">Member Login</a>
         </div>
       </footer>

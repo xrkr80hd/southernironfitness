@@ -6,9 +6,9 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/prepare-port-3000.mjs && next dev -p 3000",
     "build": "next build",
-    "start": "next start",
+    "start": "node scripts/prepare-port-3000.mjs && next start -p 3000",
     "test": "npm run build",
     "validate:artifact": "bash scripts/validate-artifact.sh",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
