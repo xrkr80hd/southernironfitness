@@ -8,6 +8,23 @@
 - Verification: The push completed successfully against `https://github.com/xrkr80hd/southernironfitness.git`.
 - Intentionally deferred work: The untracked workspace-only files remain local for separate review.
 
+## 2026-08-22 - Strict lint and production build recheck
+
+- Completed task: Rechecked the current folder with strict source linting and a production build before pushing the next GitHub commit for Vercel deployment.
+- Files affected:
+  - `.gitignore`
+  - `WORK_PLANNED.md`
+  - `WORK_IMPLEMENTED.md`
+- Result:
+  - Confirmed the correct deployment path is GitHub push to the existing Vercel Git integration, not local Vercel CLI linking.
+  - Added `tsconfig.tsbuildinfo` to ignored generated artifacts after TypeScript verification created it.
+  - Removed generated temporary Vercel CLI output from the earlier anonymous deploy attempt.
+- Verification:
+  - `npm run lint -- --max-warnings=0`: passed.
+  - `npx tsc --noEmit`: passed.
+  - `npm run build`: passed.
+- Architectural decisions: Keep Vercel deployment managed by the existing Git integration; do not add `.vercel` project metadata to the repository.
+
 ## 2026-08-22 - P0 website repair and release validation
 
 - Completed task: Repaired the public hero and dead-link issues, confirmed Vercel as the canonical deployment path, and validated the release from a clean non-synced Node runtime.

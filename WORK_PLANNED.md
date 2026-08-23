@@ -22,3 +22,11 @@
 - Intended result: `origin/main` contains the current build without local dependency backups, runtime logs, or machine-specific files.
 - Dependencies: Working local dependencies, successful `npm test`/build, valid GitHub remote access for `https://github.com/xrkr80hd/southernironfitness.git`.
 - Status: Completed
+
+## 2026-08-22 - Strict lint and production build before Vercel Git deploy
+
+- Task: Run a stricter source-quality check before pushing the current folder to GitHub for Vercel deployment.
+- Affected area: ESLint, TypeScript, Next.js production build, generated artifact ignore rules, and Git release state.
+- Intended result: `npm run lint -- --max-warnings=0`, `npx tsc --noEmit`, and `npm run build` pass before push.
+- Dependencies: Existing GitHub remote and Vercel Git integration.
+- Status: Completed locally; push triggers Vercel deployment

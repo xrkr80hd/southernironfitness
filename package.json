@@ -11,7 +11,7 @@
     "start": "node scripts/prepare-port-3000.mjs && next start -p 3000",
     "test": "npm run build",
     "validate:artifact": "bash scripts/validate-artifact.sh",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern output --ignore-pattern .playwright-cli",
     "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate"
   },
   "dependencies": {

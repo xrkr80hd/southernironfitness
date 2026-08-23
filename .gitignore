@@ -29,6 +29,7 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 .next-dev.*.log
+.next-*.log
 
 # env files (can opt-in for committing if needed)
 .env*
@@ -44,6 +45,7 @@ node_modules.broken.*/
 
 # typescript
 next-env.d.ts
+tsconfig.tsbuildinfo
 /dist/
 /.wrangler/
 /.sites-runtime/

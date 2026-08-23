@@ -54,6 +54,9 @@ const PhotoBlock = ({
 export default function Home() {
   return (
     <main>
+      <a className="skip-link" href="#about">
+        Skip to content
+      </a>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Southern Iron Fitness home">
           <span className="brand-mark">
@@ -75,9 +78,14 @@ export default function Home() {
           <a href="#training">Training</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="button button--small header-cta" href={gymdeskSignupUrl} target="_blank" rel="noreferrer">
-          Sign Up
-        </a>
+        <div className="header-actions">
+          <a className="button button--small" href={gymdeskSignupUrl} target="_blank" rel="noreferrer">
+            Sign Up
+          </a>
+          <a className="button button--small button--outline" href={gymdeskLoginUrl} target="_blank" rel="noreferrer">
+            Member Login
+          </a>
+        </div>
         <details className="mobile-menu">
           <summary aria-label="Open navigation">
             <span />
@@ -89,7 +97,10 @@ export default function Home() {
             <a href="#training">Training</a>
             <a href="#gymdesk">Membership</a>
             <a href="#contact">Contact</a>
-            <a className="button button--small" href={gymdeskLoginUrl} target="_blank" rel="noreferrer">Member Login
+            <a className="button button--small" href={gymdeskSignupUrl} target="_blank" rel="noreferrer">
+              Sign Up
+            </a>
+            <a className="button button--small button--outline" href={gymdeskLoginUrl} target="_blank" rel="noreferrer">Member Login
             </a>
           </div>
         </details>
@@ -109,6 +120,9 @@ export default function Home() {
           <div className="button-row">
             <a className="button" href={gymdeskSignupUrl} target="_blank" rel="noreferrer">
               Sign Up
+            </a>
+            <a className="button button--outline" href={gymdeskLoginUrl} target="_blank" rel="noreferrer">
+              Member Login
             </a>
             <a className="text-link" href="#about">
               Explore the gym <span>↓</span>
@@ -152,13 +166,13 @@ export default function Home() {
           <h3>Strength Floor</h3>
           <p>Racks, platforms, free weights, and equipment built for progress.</p>
           <PhotoBlock
-            label="Facility photo · 3:2"
-            title="Wide equipment-floor photo"
-            description="Shoot from a corner so the room looks large. Turn on every light and straighten all equipment first."
-            imageSrc="/photos/fitness-foto.jpeg"
-            imageAlt="Southern Iron Fitness weight floor with benches, dumbbells, and machines"
+            label="Facility photo · 4:5"
+            title="Portrait equipment-floor photo"
+            description="Real Southern Iron equipment floor cropped to match the feature-card set."
+            imageSrc="/photos/strength_floor.jpg"
+            imageAlt="Southern Iron Fitness strength floor with benches, mirrors, and free weights"
             imagePosition="center"
-            className="feature-photo feature-photo--wide"
+            className="feature-photo feature-photo--portrait"
             hideContent
           />
         </article>
@@ -194,30 +208,17 @@ export default function Home() {
 
       <section className="gymdesk section" id="gymdesk">
         <div className="gymdesk-copy">
-          <Image
-            className="membership-stamp"
-            src="/brand/southern-iron-founders.png"
-            alt="Southern Iron Founders Woodworth, LA"
-            width={1774}
-            height={887}
-          />
-          <p className="eyebrow">Powered by Gymdesk</p>
-          <h2>Train with us from day one.</h2>
-          <p>
-            Southern Iron Fitness is opening for people who want a real place
-            to work, grow, and stay consistent. Claim your spot early and help
-            build the strongest training community in Woodworth.
-          </p>
+          <p className="eyebrow">Membership</p>
+          <h2>It&apos;s simple.</h2>
           <ul>
-            <li>Founding members get first access before launch</li>
-            <li>Built for strength training, discipline, and accountability</li>
-            <li>Local gym energy without the crowded big-box feel</li>
-            <li>Simple signup through Gymdesk</li>
+            <li>Choose your plan below</li>
+            <li>Sign up online</li>
+            <li>Member Login anytime for account access</li>
           </ul>
         </div>
         <div className="gymdesk-embed">
-          <span className="embed-tag">Southern Iron Founders</span>
           <h3>Membership options</h3>
+          <p className="membership-kicker">Turn one day into Day One.</p>
           <div className="plan-row">
             <div>
               <strong>Single</strong>
@@ -247,23 +248,38 @@ export default function Home() {
             <span>$80/mo</span>
           </div>
           <div className="rate-strip">
-            <span>Day Pass: $10</span>
-            <span>Guest Pass: $5</span>
+            <span>
+              <strong>Day Pass:</strong>
+              <em>$10</em>
+            </span>
+            <span>
+              <strong>Guest Pass:</strong>
+              <em>$5</em>
+            </span>
           </div>
           <div className="service-rates">
             <strong>Service and group rates</strong>
             <p>Available for groups of 8 or more, first responders, veterans, active military, law enforcement, fire, EMS, EMTs, paramedics, and nurses.</p>
             <div>
-              <span>Single $30/mo</span>
-              <span>Couple $40/mo</span>
-              <span>Family $65/mo</span>
+              <span>
+                <strong>Single</strong>
+                <em>$30/mo</em>
+              </span>
+              <span>
+                <strong>Couple</strong>
+                <em>$40/mo</em>
+              </span>
+              <span>
+                <strong>Family</strong>
+                <em>$65/mo</em>
+              </span>
             </div>
           </div>
           <a className="gymdesk-action" href={gymdeskSignupUrl} target="_blank" rel="noreferrer">
             Sign Up Through Gymdesk →
           </a>
           <p className="embed-note">
-            Members and founding sign-ups can use the Gymdesk portal.
+            Members can use the Gymdesk portal for account access.
           </p>
         </div>
       </section>
@@ -276,18 +292,32 @@ export default function Home() {
       </section>
 
       <section className="final-cta section" id="contact">
-        <p className="eyebrow">Strength starts with a decision</p>
-        <h2>Be here from day one.</h2>
+        <p className="eyebrow">FAQ and contact</p>
+        <h2>Questions before you join?</h2>
         <p>
-          Join the early-access list and get opening updates, founding
-          membership details, and pre-launch offers.
+          Get the basics on membership, account access, and where to send
+          questions before you sign up.
         </p>
+        <div className="faq-grid">
+          <article>
+            <strong>How do I join?</strong>
+            <p>Use Gymdesk to choose a membership and complete signup online.</p>
+          </article>
+          <article>
+            <strong>Where do I log in?</strong>
+            <p>Use Member Login to manage account access through Gymdesk.</p>
+          </article>
+          <article>
+            <strong>Need help first?</strong>
+            <p>Send a question and Southern Iron will follow up directly.</p>
+          </article>
+        </div>
         <div className="button-row button-row--center">
-          <a className="button" href={gymdeskSignupUrl} target="_blank" rel="noreferrer">
-            Join Through Gymdesk
-          </a>
-          <a className="button button--outline" href="mailto:info@southernironfitness.com">
+          <a className="button" href="mailto:info@southernironfitness.com">
             Ask a Question
+          </a>
+          <a className="button button--outline" href={gymdeskLoginUrl} target="_blank" rel="noreferrer">
+            Member Login
           </a>
         </div>
       </section>
@@ -305,6 +335,11 @@ export default function Home() {
             9338 Highway 165 South, Suite F
             <span>Woodworth, LA 71485</span>
           </a>
+          <div className="location-actions">
+            <a className="text-link" href="mailto:info@southernironfitness.com">
+              Ask a question <span>→</span>
+            </a>
+          </div>
         </div>
         <iframe
           className="map-frame"

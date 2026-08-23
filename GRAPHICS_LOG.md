@@ -81,3 +81,19 @@
 - Generation status: planned
 - Revision status: pending approval
 - Final status: pending; deferred from the current website release
+
+### 6) Strength Floor feature-card photo
+- Asset name: Strength Floor equipment image
+- Project: Southern Iron Fitness website
+- Purpose: Feature-card image for the Strength Floor section
+- Destination: Homepage Strength Floor card
+- Target platform: web
+- Aspect ratio: 2:3 portrait crop in UI
+- Dimensions if known: source asset copied from `C:\Users\XRKR80HD\Desktop\strength_floor.jpg`
+- Style direction: real facility photography, focused equipment-floor crop, consistent with the current portrait card set
+- Anchor references: public/photos/strength_floor.jpg
+- Employee references: none
+- Prompt: Owner-provided real facility asset; no generation prompt used for this implementation.
+- Generation status: not generated
+- Revision status: implemented
+- Final status: approved for current Strength Floor card unless owner provides a newer crop
