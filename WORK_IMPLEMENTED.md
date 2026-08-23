@@ -1,5 +1,13 @@
 # Work Implemented
 
+## 2026-08-22 - GitHub release completed
+
+- Completed task: Committed the validated website repair set and pushed `main` to `origin`.
+- Files affected: Eight reviewed website, runtime, audit, and LICL files in release commit `5829eaf`.
+- Result: GitHub accepted `main` at `5829eaf`; unrelated local assets, dependency remnants, Codex hooks, `AGENTS.md`, and Supabase files were excluded.
+- Verification: The push completed successfully against `https://github.com/xrkr80hd/southernironfitness.git`.
+- Intentionally deferred work: The untracked workspace-only files remain local for separate review.
+
 ## 2026-08-22 - P0 website repair and release validation
 
 - Completed task: Repaired the public hero and dead-link issues, confirmed Vercel as the canonical deployment path, and validated the release from a clean non-synced Node runtime.
