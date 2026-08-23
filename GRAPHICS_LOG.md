@@ -97,3 +97,19 @@
 - Generation status: not generated
 - Revision status: implemented
 - Final status: approved for current Strength Floor card unless owner provides a newer crop
+
+### 7) Round SIF header logo
+- Asset name: SIF round logo
+- Project: Southern Iron Fitness website
+- Purpose: Top-corner sticky header brand mark
+- Destination: Homepage header
+- Target platform: web
+- Aspect ratio: 1:1
+- Dimensions if known: 3464x3464 source PNG
+- Style direction: round black/gold Southern Iron Fitness badge, direct brand recognition, no polygon crop
+- Anchor references: public/brand/sif_logo_round.png
+- Employee references: none
+- Prompt: Owner-provided brand asset; no generation prompt used.
+- Generation status: not generated
+- Revision status: implemented in header
+- Final status: approved for current header logo

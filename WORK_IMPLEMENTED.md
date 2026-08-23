@@ -1,5 +1,27 @@
 # Work Implemented
 
+## 2026-08-23 - Header round SIF logo
+
+- Completed task: Replaced the top-corner header logo with the round SIF logo asset.
+- Files affected:
+  - `app/page.tsx`
+  - `app/globals.css`
+  - `public/brand/sif_logo_round.png`
+  - `GRAPHICS_LOG.md`
+  - `WORK_PLANNED.md`
+  - `WORK_IMPLEMENTED.md`
+- Result:
+  - Header brand mark now uses `/brand/sif_logo_round.png`.
+  - Added a scoped `brand-mark--round` style so the header logo displays as a true round badge.
+  - Footer logo remains unchanged.
+- Verification:
+  - `npm run lint -- --max-warnings=0`: passed.
+  - `npx tsc --noEmit`: passed.
+  - `npm run build`: passed.
+  - Production server on `http://localhost:3000`: returned `200`.
+  - Browser rendered check: header image source resolves to `sif_logo_round.png`, round mark renders at 64x64 with `border-radius: 50%`, no polygon clip, and no relevant console warnings/errors.
+- Architectural decisions: Use the owner-provided PNG asset directly; no generated or replacement logo asset created.
+
 ## 2026-08-23 - Find Us map repair
 
 - Completed task: Repaired the bottom Find Us location section map display and removed the extra Ask a question link under the address.

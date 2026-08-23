@@ -38,3 +38,11 @@
 - Intended result: The location section shows Southern Iron Fitness, the address, a usable map, and a direct Google Maps link without the extra ask-question CTA under the address.
 - Dependencies: Existing address and Google Maps URL; GitHub push triggers Vercel deployment.
 - Status: Completed
+
+## 2026-08-23 - Replace header logo with round SIF mark
+
+- Task: Use `public/brand/sif_logo_round.png` as the top-corner header logo in place of the current compact SVG mark.
+- Affected area: `app/page.tsx`, `app/globals.css`, `GRAPHICS_LOG.md`, header brand presentation, local validation, and Git deployment trigger.
+- Intended result: The sticky header shows the round Southern Iron Fitness logo without distortion or the old clipped badge treatment.
+- Dependencies: Existing round logo asset at `public/brand/sif_logo_round.png`.
+- Status: Completed

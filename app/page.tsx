@@ -63,12 +63,12 @@ export default function Home() {
       </a>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Southern Iron Fitness home">
-          <span className="brand-mark">
+          <span className="brand-mark brand-mark--round">
             <Image
-              src="/brand/southern-iron-compact-dark.svg"
+              src="/brand/sif_logo_round.png"
               alt=""
-              width={384}
-              height={344}
+              width={3464}
+              height={3464}
               priority
             />
           </span>
