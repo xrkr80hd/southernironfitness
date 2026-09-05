@@ -1,0 +1,2 @@
+alter table public.lift_lab_legal_acknowledgments
+  drop constraint if exists lift_lab_legal_acknowledgments_user_id_fkey;

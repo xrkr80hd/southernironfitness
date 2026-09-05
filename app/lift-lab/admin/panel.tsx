@@ -57,8 +57,7 @@ export default function LiftLabAdmin() {
 
   async function reviewAccount(id: string, approvalStatus: "approved" | "denied") {
     const supabase = createClient();
-    const { error } = await supabase.from("lift_lab_profiles").update({ approval_status: approvalStatus }).eq("id", id);
-    if (!error) await supabase.from("lift_lab_admin_notifications").update({ read_at: new Date().toISOString() }).eq("profile_id", id).is("read_at", null);
+    const { error } = await supabase.rpc("review_lift_lab_account", { target_profile_id: id, decision: approvalStatus });
     setMessage(error ? error.message : approvalStatus === "approved" ? "Account approved. They can now reserve classes." : "Account request declined.");
     if (!error) await load();
   }

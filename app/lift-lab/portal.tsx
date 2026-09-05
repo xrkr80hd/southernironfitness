@@ -68,16 +68,15 @@ export default function LiftLabPortal() {
       } else {
         const fullName = String(form.get("fullName") ?? "").trim();
         const phone = String(form.get("phone") ?? "").trim();
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            emailRedirectTo: `${window.location.origin}/lift-lab/auth/callback`,
-            data: { full_name: fullName, phone, disclaimer_accepted: true, disclaimer_version: "2026-09-05" },
-          },
+        const response = await fetch("/api/lift-lab/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password, fullName, phone, legalAcknowledgmentAccepted: true }),
         });
-        if (error) throw error;
-        setMessage("You’re almost in! Check your email to confirm your Madie’s Lift Lab account.");
+        const result = await response.json() as { error?: string };
+        if (!response.ok) throw new Error(result.error || "We couldn’t create your account.");
+        setMessage("Your signed account request was sent directly to Madie for approval.");
+        await loadPortal();
       }
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Please try again.");
@@ -125,14 +124,20 @@ export default function LiftLabPortal() {
             <label className="lift-lab-disclaimer">
               <input name="disclaimer" type="checkbox" required />
               <span>
-                I understand that Madison Rabalais, doing business as Madie&apos;s Lift Lab,
-                is an independent trainer and is not an employee or agent of Southern Iron
-                Fitness. Southern Iron Fitness does not direct or control her training
-                services and is not responsible for her instruction, programs, results, or
-                injuries arising from participation in her training. I understand that
-                physical exercise carries inherent risks, and I voluntarily choose to
-                participate. This acknowledgment does not waive rights that cannot legally
-                be waived.
+                <strong>Legal acknowledgment and electronic signature.</strong> By checking
+                this box and creating my account, I affirm that I have read, understand,
+                and agree to this acknowledgment. I understand that Madison Rabalais, doing
+                business as Madie&apos;s Lift Lab, is an independent trainer and independent
+                business—not an employee, agent, partner, or representative of Southern
+                Iron Fitness. Southern Iron Fitness does not select, direct, supervise, or
+                control her training methods, programming, scheduling, charges, promises,
+                or results. Any agreement for her training services is between me and
+                Madie&apos;s Lift Lab. I understand that exercise and strength training involve
+                inherent risks, including the risk of physical injury, and I voluntarily
+                choose to participate. This acknowledgment documents my informed decision
+                and the independent relationship described above. It does not release any
+                person or business from liability that Louisiana law does not permit to be
+                waived.
               </span>
             </label>
           )}
