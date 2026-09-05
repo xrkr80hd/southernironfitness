@@ -657,6 +657,69 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
 .master-admin__service { display: grid; grid-template-columns: minmax(220px, 1fr) auto auto; gap: 18px; align-items: center; padding: 16px 0; border-top: 1px solid #cbc5b8; }
 .master-admin__service > div { display: grid; gap: 4px; }
 .master-admin__service span, .master-admin__service time { color: #615e57; font-size: 12px; text-transform: capitalize; }
+.lift-lab-cookie-notice { position: fixed; z-index: 80; right: 18px; bottom: 18px; display: flex; width: min(520px, calc(100vw - 36px)); align-items: center; gap: 18px; padding: 16px 18px; border: 1px solid #45433e; border-left: 5px solid var(--rust); background: #171716; color: #fff; box-shadow: 0 14px 40px rgba(0,0,0,.34); }
+.lift-lab-cookie-notice div { display: grid; gap: 4px; }
+.lift-lab-cookie-notice strong { font-size: 14px; text-transform: uppercase; }
+.lift-lab-cookie-notice p { margin: 0; color: #ccc7bd; font-size: 12px; line-height: 1.45; }
+.lift-lab-cookie-notice button { flex: 0 0 auto; min-height: 42px; padding: 0 16px; border: 0; background: var(--rust); color: #fff; cursor: pointer; font-weight: 900; text-transform: uppercase; }
+.lift-lab-form select, .lift-lab-form textarea { width: 100%; min-height: 50px; padding: 11px 13px; border: 1px solid #aaa397; border-radius: 0; background: #fff; color: #10100f; font: inherit; }
+.lift-lab-form textarea { min-height: 92px; resize: vertical; }
+.lift-lab-form select:focus, .lift-lab-form textarea:focus { outline: 3px solid rgba(183,71,40,.34); border-color: var(--rust); }
+.lift-suite { color: var(--paper); }
+.lift-suite__tabs { display: flex; gap: 7px; overflow-x: auto; margin: 0 0 24px; padding: 5px; border: 1px solid #393834; background: #111; scrollbar-width: thin; }
+.lift-suite__tabs button { min-width: max-content; min-height: 44px; padding: 0 16px; border: 0; background: transparent; color: #bbb5a8; cursor: pointer; font-size: 12px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.lift-suite__tabs button.is-active { background: var(--rust); color: #fff; }
+.lift-suite__metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.lift-suite__metrics article { display: grid; gap: 7px; padding: 25px; border-top: 5px solid var(--rust); background: #1a1a18; }
+.lift-suite__metrics strong { color: #fff; font-size: clamp(34px, 5vw, 58px); line-height: 1; }
+.lift-suite__metrics span { color: #aaa598; font-size: 11px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.lift-suite__stack { display: grid; gap: 24px; }
+.lift-suite__calendar-card { overflow-x: auto; }
+.lift-suite__calendar-head { display: flex; min-width: 650px; align-items: center; justify-content: space-between; gap: 18px; }
+.lift-suite__calendar-head button { width: 44px; height: 44px; border: 1px solid #aaa397; background: transparent; color: var(--ink); cursor: pointer; font-size: 22px; }
+.lift-suite__calendar-head h2 { margin: 0; text-align: center; }
+.lift-suite__weekdays, .lift-suite__calendar { display: grid; min-width: 650px; grid-template-columns: repeat(7, 1fr); }
+.lift-suite__weekdays { margin-top: 24px; background: #171716; color: #eeeae0; }
+.lift-suite__weekdays strong { padding: 10px 5px; font-size: 10px; text-align: center; text-transform: uppercase; }
+.lift-suite__calendar article { display: grid; min-height: 92px; align-content: start; gap: 4px; padding: 9px; border-right: 1px solid #cbc5b8; border-bottom: 1px solid #cbc5b8; background: #fff; }
+.lift-suite__calendar article:nth-child(7n+1) { border-left: 1px solid #cbc5b8; }
+.lift-suite__calendar article.is-muted { background: #ddd8cd; color: #8b857b; }
+.lift-suite__calendar article > span { font-weight: 900; }
+.lift-suite__calendar small { color: #6f6a60; font-size: 10px; }
+.lift-suite__calendar b { color: var(--rust); font-size: 10px; text-transform: uppercase; }
+.lift-suite__list { display: grid; margin-top: 22px; }
+.lift-suite__list > article { display: grid; grid-template-columns: minmax(210px, 1fr) auto auto; gap: 14px; align-items: center; padding: 17px 0; border-top: 1px solid #cbc5b8; }
+.lift-suite__list > article > div:first-child { display: grid; gap: 5px; }
+.lift-suite__list span { color: #615e57; font-size: 12px; }
+.lift-suite__programs { display: grid; gap: 16px; margin-top: 22px; }
+.lift-suite__programs article { padding: 20px; border: 1px solid #cbc5b8; background: #fff; }
+.lift-suite__programs article > div { display: grid; gap: 4px; }
+.lift-suite__programs span, .lift-suite__programs li { color: #615e57; font-size: 13px; line-height: 1.5; }
+.lift-suite__settings { max-width: 720px; }
+.lift-master-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.lift-master-home .button--outline { border-color: #615e57; color: var(--ink); }
+.lift-client-suite { margin-top: 28px; }
+.lift-client-suite .lift-suite__tabs { border-color: #c0baae; background: #ded9ce; }
+.lift-client-suite .lift-suite__tabs button { color: #4c4943; }
+.lift-client-suite .lift-suite__tabs button.is-active { color: #fff; }
+.lift-client-suite .lift-lab-card { margin: 0; box-shadow: none; }
+.lift-client-reminders { display: grid; gap: 9px; margin: 22px 0; }
+.lift-client-reminders p { margin: 0; padding: 13px 15px; border-left: 4px solid var(--rust); background: #e2ddd2; color: #47443e; line-height: 1.45; }
+.lift-client-workouts { display: grid; gap: 16px; margin-top: 24px; }
+.lift-client-workouts > article { display: grid; grid-template-columns: minmax(210px, 1fr) auto; gap: 14px; padding: 18px; border: 1px solid #cbc5b8; background: #fff; }
+.lift-client-workouts > article > div { display: grid; gap: 5px; }
+.lift-client-workouts span, .lift-client-workouts p { margin: 0; color: #615e57; font-size: 12px; line-height: 1.45; }
+.lift-client-workout-form { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr) auto; gap: 8px; }
+.lift-client-workout-form input { min-width: 0; min-height: 44px; padding: 8px; border: 1px solid #aaa397; }
+.lift-client-workout-form button, .lift-client-payment-form button { min-height: 44px; padding: 0 15px; border: 0; background: var(--rust); color: #fff; cursor: pointer; font-weight: 900; text-transform: uppercase; }
+.lift-client-payment { display: grid; grid-template-columns: minmax(210px, 1fr) auto; gap: 14px; align-items: start; padding: 22px; border: 1px solid #cbc5b8; background: #fff; }
+.lift-client-payment > div:first-child { display: grid; gap: 5px; }
+.lift-client-payment > div:first-child span { color: #615e57; font-size: 12px; text-transform: capitalize; }
+.lift-client-payment > .button, .lift-client-payment-form { grid-column: 1 / -1; }
+.lift-client-payment > .button { justify-self: start; }
+.lift-lab-status--pending, .lift-lab-status--awaiting, .lift-lab-status--submitted { background: #f1dfbd; color: #694713 !important; }
+.lift-lab-status--confirmed, .lift-lab-status--completed, .lift-lab-status--verified, .lift-lab-status--paid_in_person { background: #d6e5d2; color: #31542c !important; }
+.lift-lab-status--declined, .lift-lab-status--rejected, .lift-lab-status--cancelled { background: #ead3cd; color: #782f1e !important; }
 
 @media (max-width: 1024px) {
   .desktop-nav { display: none; }
@@ -693,6 +756,9 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
   .master-admin__summary .button { grid-column: 1 / -1; }
   .master-admin__service { grid-template-columns: 1fr auto; }
   .master-admin__service > span { grid-column: 1 / -1; }
+  .lift-suite__metrics { grid-template-columns: 1fr 1fr; }
+  .lift-client-workout-form { grid-template-columns: 1fr 1fr; }
+  .lift-client-workout-form button { grid-column: 1 / -1; }
 }
 
 @media (max-width: 560px) {
@@ -720,7 +786,16 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
   .master-admin__summary { grid-template-columns: 1fr; }
   .master-admin__summary .button { grid-column: auto; }
   .master-admin__records summary, .master-admin__service { display: grid; grid-template-columns: 1fr; }
+  .lift-lab-cookie-notice { right: 10px; bottom: 10px; width: calc(100vw - 20px); align-items: stretch; flex-direction: column; }
+  .lift-lab-cookie-notice button { width: 100%; }
   .lift-lab-admin { padding-inline: 14px; }
+  .lift-suite__metrics { grid-template-columns: 1fr; }
+  .lift-suite__list > article, .lift-client-workouts > article, .lift-client-payment { grid-template-columns: 1fr; }
+  .lift-suite__list .lift-lab-request-actions, .lift-client-workout-form, .lift-client-payment > .button, .lift-client-payment-form { grid-column: auto; }
+  .lift-client-workout-form { grid-template-columns: 1fr; }
+  .lift-client-workout-form button { grid-column: auto; }
+  .lift-master-actions { align-items: stretch; flex-direction: column; }
+  .lift-master-actions .button { justify-content: center; }
   .section-heading { display: block; }
   .section-heading > p { margin-top: 25px; }
   .gallery-grid { grid-template-columns: 1fr; }

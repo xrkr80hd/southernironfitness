@@ -1,10 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+import LiftLabCookieNotice from "./cookie-notice";
 import LiftLabPortal from "./portal";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Madie's Lift Lab | Southern Iron Fitness",
   description: "Create an account, view classes, and reserve your place with Madie's Lift Lab.",
+  manifest: "/lift-lab/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/icons/madies-lift-lab-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icons/madies-lift-lab-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/icons/madies-lift-lab-192.png",
+    apple: [{ url: "/icons/madies-lift-lab-apple.png", sizes: "180x180", type: "image/png" }],
+  },
+  openGraph: {
+    title: "Madie’s Lift Lab",
+    description: "Private training, scheduling, and programs with Madie’s Lift Lab.",
+    url: "/lift-lab",
+    images: [{ url: "/brand/madies-lift-lab-social.jpg", width: 1200, height: 630, alt: "Madie’s Lift Lab" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Madie’s Lift Lab",
+    images: ["/brand/madies-lift-lab-social.jpg"],
+  },
 };
 
 export default function LiftLabPage() {
@@ -31,6 +53,7 @@ export default function LiftLabPage() {
         </div>
         <LiftLabPortal />
       </section>
+      <LiftLabCookieNotice />
     </main>
   );
 }

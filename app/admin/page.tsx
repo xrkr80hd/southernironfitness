@@ -8,7 +8,7 @@ export default function AdminPage() {
     <main className="lift-lab-admin-page">
       <header className="lift-lab-header">
         <Link href="/" className="lift-lab-back">← Southern Iron Fitness</Link>
-        <span>Secure master administration</span>
+        <Link href="/lift-lab/admin" className="lift-lab-back">Scheduler &amp; Users →</Link>
       </header>
       <SouthernIronAdmin />
     </main>

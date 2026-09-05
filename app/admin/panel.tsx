@@ -25,7 +25,12 @@ type ServiceRecord = {
 };
 
 function downloadJson(records: LegalRecord[]) {
-  const blob = new Blob([JSON.stringify({ exported_at: new Date().toISOString(), records }, null, 2)], { type: "application/json" });
+  const timestampedRecords = records.map(record => ({
+    ...record,
+    signature_date: record.accepted_at.slice(0, 10),
+    signature_timestamp_utc: record.accepted_at,
+  }));
+  const blob = new Blob([JSON.stringify({ exported_at: new Date().toISOString(), records: timestampedRecords }, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");
   anchor.href = url;
@@ -54,7 +59,7 @@ export default function SouthernIronAdmin() {
     } catch { setAuthorized(false); }
   }, []);
 
-  useEffect(() => { void load(); }, [load]);
+  useEffect(() => { queueMicrotask(() => void load()); }, [load]);
 
   if (authorized === null) return <section className="lift-lab-admin"><p>Opening the secure archive…</p></section>;
   if (!authorized) return <section className="lift-lab-admin"><h1>Master administration</h1><p>This private archive is available only to the Southern Iron Fitness master administrator.</p><a className="button" href="/lift-lab">Go to secure login</a></section>;
@@ -76,10 +81,10 @@ export default function SouthernIronAdmin() {
         <div>
           {legalRecords.length ? legalRecords.map(record => (
             <details key={record.id}>
-              <summary><span><strong>{record.full_name}</strong><small>{record.email}</small></span><time>{new Date(record.accepted_at).toLocaleString()}</time></summary>
+              <summary><span><strong>{record.full_name}</strong><small>{record.email}</small></span><time>Signed {new Date(record.accepted_at).toLocaleDateString()} at {new Date(record.accepted_at).toLocaleTimeString()}</time></summary>
               <div className="master-admin__record-body">
                 <p>{record.acknowledgment_text}</p>
-                <dl><div><dt>Version</dt><dd>{record.acknowledgment_version}</dd></div><div><dt>SHA-256</dt><dd>{record.acknowledgment_sha256}</dd></div><div><dt>User ID</dt><dd>{record.user_id || "Account removed; evidence retained"}</dd></div></dl>
+                <dl><div><dt>Signature date</dt><dd>{new Date(record.accepted_at).toLocaleDateString()}</dd></div><div><dt>Exact timestamp (UTC)</dt><dd>{record.accepted_at}</dd></div><div><dt>Version</dt><dd>{record.acknowledgment_version}</dd></div><div><dt>SHA-256</dt><dd>{record.acknowledgment_sha256}</dd></div><div><dt>User ID</dt><dd>{record.user_id || "Account removed; evidence retained"}</dd></div></dl>
               </div>
             </details>
           )) : <p>No acknowledgments have been recorded yet.</p>}

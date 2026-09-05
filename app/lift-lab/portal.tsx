@@ -2,26 +2,15 @@
 
 import { FormEvent, useCallback, useEffect, useState } from "react";
 import { createClient } from "../../lib/supabase/client";
+import LiftLabClientSuite from "./client-suite";
 
-type ClassItem = {
-  id: string;
-  title: string;
-  description: string | null;
-  starts_at: string;
-  duration_minutes: number;
-  capacity: number;
-  location: string;
-};
-
-type Registration = { id: string; class_id: string; status: string; payment_status: string };
-type Profile = { full_name: string; phone: string | null; role: "member" | "admin"; approval_status: "pending" | "approved" | "denied" };
+type Profile = { full_name: string; phone: string | null; role: "member" | "admin" | "master_admin"; approval_status: "pending" | "approved" | "denied" };
 
 export default function LiftLabPortal() {
   const [mode, setMode] = useState<"login" | "signup">("signup");
   const [userId, setUserId] = useState<string | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
-  const [classes, setClasses] = useState<ClassItem[]>([]);
-  const [registrations, setRegistrations] = useState<Registration[]>([]);
+  const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
 
@@ -29,26 +18,22 @@ export default function LiftLabPortal() {
     const supabase = createClient();
     const { data: { user } } = await supabase.auth.getUser();
     setUserId(user?.id ?? null);
-    if (!user) return;
-    const [{ data: profileData }, { data: classData }, { data: registrationData }] = await Promise.all([
-      supabase.from("lift_lab_profiles").select("full_name, phone, role, approval_status").single(),
-      supabase.from("lift_lab_classes").select("id, title, description, starts_at, duration_minutes, capacity, location").eq("is_published", true).gte("starts_at", new Date().toISOString()).order("starts_at"),
-      supabase.from("lift_lab_registrations").select("id, class_id, status, payment_status"),
-    ]);
+    if (!user) { setProfile(null); setLoading(false); return; }
+    const { data: profileData, error } = await supabase.from("lift_lab_profiles").select("full_name, phone, role, approval_status").eq("id", user.id).single();
+    if (error) setMessage(error.message);
     setProfile(profileData as Profile | null);
-    setClasses((classData ?? []) as ClassItem[]);
-    setRegistrations((registrationData ?? []) as Registration[]);
+    setLoading(false);
   }, []);
 
   useEffect(() => {
     let unsubscribe = () => {};
     try {
       const supabase = createClient();
-      void loadPortal();
+      queueMicrotask(() => void loadPortal());
       const { data } = supabase.auth.onAuthStateChange(() => void loadPortal());
       unsubscribe = () => data.subscription.unsubscribe();
     } catch {
-      setMessage("Class signup is being connected. Please check back shortly.");
+      queueMicrotask(() => setMessage("Lift Lab sign-in is being connected. Please check back shortly."));
     }
     return unsubscribe;
   }, [loadPortal]);
@@ -85,29 +70,13 @@ export default function LiftLabPortal() {
     }
   }
 
-  async function reserve(classId: string) {
-    setBusy(true);
-    setMessage("");
-    try {
-      const supabase = createClient();
-      const { error } = await supabase.from("lift_lab_registrations").insert({ class_id: classId, user_id: userId });
-      if (error) throw error;
-      setMessage("You’re registered! Madie can now see your reservation.");
-      await loadPortal();
-    } catch (error) {
-      setMessage(error instanceof Error ? error.message : "We couldn’t reserve that class.");
-    } finally {
-      setBusy(false);
-    }
-  }
-
   async function signOut() {
     const supabase = createClient();
     await supabase.auth.signOut();
     setProfile(null);
-    setClasses([]);
-    setRegistrations([]);
   }
+
+  if (loading) return <section className="lift-lab-card"><p>Opening your secure Lift Lab account…</p></section>;
 
   if (!userId) {
     return (
@@ -152,7 +121,7 @@ export default function LiftLabPortal() {
     );
   }
 
-  if (profile?.role !== "admin" && profile?.approval_status !== "approved") {
+  if (profile?.role === "member" && profile?.approval_status !== "approved") {
     const denied = profile?.approval_status === "denied";
     return (
       <section className="lift-lab-card lift-lab-pending">
@@ -164,28 +133,33 @@ export default function LiftLabPortal() {
     );
   }
 
+  if (profile?.role === "master_admin") {
+    return (
+      <section className="lift-lab-card lift-lab-dashboard lift-master-home">
+        <div className="lift-lab-dashboard__head"><div><p className="eyebrow">Master administrator</p><h2>Southern Iron oversight</h2></div><button className="lift-lab-text-button" onClick={signOut}>Sign out</button></div>
+        <p className="lift-lab-card__intro">Your account has scheduling, user-support, and legal archive access. Madie’s prices, revenue, payments, and private programs remain hidden.</p>
+        <div className="lift-master-actions"><a className="button" href="/lift-lab/admin">Open Scheduler &amp; Users</a><a className="button button--outline" href="/admin">Open Legal Evidence Archive</a></div>
+      </section>
+    );
+  }
+
+  if (profile?.role === "admin") {
+    return (
+      <section className="lift-lab-card lift-lab-dashboard lift-master-home">
+        <div className="lift-lab-dashboard__head"><div><p className="eyebrow">Independent trainer</p><h2>Welcome, Madie.</h2></div><button className="lift-lab-text-button" onClick={signOut}>Sign out</button></div>
+        <p className="lift-lab-card__intro">Manage your availability, appointment approvals, services, private pricing, payments, and client programs.</p>
+        <a className="button" href="/lift-lab/admin">Open Madie’s Dashboard</a>
+      </section>
+    );
+  }
+
   return (
     <section className="lift-lab-card lift-lab-dashboard">
       <div className="lift-lab-dashboard__head">
         <div><p className="eyebrow">Your Lift Lab</p><h2>Hey, {profile?.full_name?.split(" ")[0] || "there"}.</h2></div>
         <button className="lift-lab-text-button" onClick={signOut}>Sign out</button>
       </div>
-      {message && <p className="lift-lab-message" role="status">{message}</p>}
-      <div className="lift-lab-class-list">
-        {classes.length ? classes.map((item) => {
-          const registration = registrations.find((entry) => entry.class_id === item.id && entry.status !== "cancelled");
-          return (
-            <article key={item.id} className="lift-lab-class">
-              <time dateTime={item.starts_at}>{new Intl.DateTimeFormat("en-US", { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(new Date(item.starts_at))}</time>
-              <h3>{item.title}</h3>
-              {item.description && <p>{item.description}</p>}
-              <small>{item.duration_minutes} minutes · {item.location}</small>
-              <button className="button" disabled={busy || Boolean(registration)} onClick={() => reserve(item.id)}>{registration ? "You’re Registered" : "Reserve My Spot"}</button>
-            </article>
-          );
-        }) : <div className="lift-lab-empty"><strong>New classes are on the way.</strong><p>Once Madie publishes her schedule, you’ll see every available class right here.</p></div>}
-      </div>
-      {profile?.role === "admin" && <a className="button button--outline" href="/lift-lab/admin">Open Madie’s Dashboard</a>}
+      <LiftLabClientSuite userId={userId} firstName={profile?.full_name?.split(" ")[0] || "there"} />
     </section>
   );
 }

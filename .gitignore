@@ -51,3 +51,4 @@ tsconfig.tsbuildinfo
 /.sites-runtime/
 /outputs/
 /work/
+/supabase/.temp/
