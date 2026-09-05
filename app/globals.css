@@ -357,9 +357,63 @@ h2 { max-width: 850px; margin-bottom: 0; font-size: clamp(40px, 5vw, 76px); line
 .gallery-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; }
 .gallery-grid .photo-block:nth-child(1), .gallery-grid .photo-block:nth-child(5) { grid-column: span 2; }
 
-.schedule { background: var(--paper); color: var(--ink); text-align: center; }
-.schedule > div { max-width: 720px; margin: 0 auto; }
-.schedule > div > p { margin-top: 18px; color: var(--rust); font-size: 18px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.class-signup {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(300px, .85fr) minmax(0, 1.15fr);
+  gap: clamp(42px, 8vw, 130px);
+  align-items: center;
+  padding: clamp(64px, 8vw, 120px) clamp(22px, 7vw, 110px);
+  overflow: hidden;
+  border-block: 6px solid var(--ink);
+  background: #f7f7f4;
+  color: var(--ink);
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease;
+}
+.class-signup::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: clamp(7px, 1vw, 13px);
+  background: var(--rust);
+}
+.class-signup__art {
+  position: relative;
+  width: min(100%, 570px);
+  aspect-ratio: 1;
+  justify-self: center;
+}
+.class-signup__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.class-signup__logo--dark { display: none; }
+.class-signup__content { max-width: 680px; }
+.class-signup__content h2 {
+  font-size: clamp(42px, 5.5vw, 82px);
+}
+.class-signup__content > p:not(.eyebrow) {
+  max-width: 570px;
+  margin: 27px 0 0;
+  color: #514e47;
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.6;
+}
+.class-signup__button {
+  margin-top: 34px;
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+html[data-class-theme="dark"] .class-signup {
+  border-color: var(--paper);
+  background: #050505;
+  color: #fff;
+}
+html[data-class-theme="dark"] .class-signup__logo--light { display: none; }
+html[data-class-theme="dark"] .class-signup__logo--dark { display: block; }
+html[data-class-theme="dark"] .class-signup__content > p:not(.eyebrow) { color: #c9c4b8; }
+html[data-class-theme="dark"] .class-signup__button { box-shadow: 8px 8px 0 #eeeae0; }
 
 .final-cta { text-align: center; background: linear-gradient(rgba(16,16,15,.86), rgba(16,16,15,.94)), repeating-linear-gradient(45deg,#1c1c1a 0,#1c1c1a 2px,#151513 2px,#151513 14px); }
 .final-cta h2 { margin-inline: auto; }
@@ -515,13 +569,17 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
 }
 
 @media (max-width: 900px) {
-  .hero, .intro, .gymdesk, .schedule, .location-band, .community-thanks { grid-template-columns: 1fr; }
+  .hero, .intro, .gymdesk, .location-band, .community-thanks, .class-signup { grid-template-columns: 1fr; }
   .hero { min-height: auto; }
   .photo-block--tall { min-height: 450px; }
   .feature-grid { grid-template-columns: 1fr; }
   .feature-card { min-height: auto; }
   .feature-photo--portrait { max-height: none; }
   .faq-grid { grid-template-columns: 1fr; }
+  .class-signup { gap: 32px; text-align: center; }
+  .class-signup__art { width: min(82vw, 470px); }
+  .class-signup__content { justify-self: center; }
+  .class-signup__content > p:not(.eyebrow) { margin-inline: auto; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
   .gallery-grid .photo-block:nth-child(1), .gallery-grid .photo-block:nth-child(5) { grid-column: span 2; }
   footer { grid-template-columns: 1fr; text-align: center; }
@@ -533,6 +591,12 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
   h1 { font-size: 61px; }
   .button-row { align-items: stretch; flex-direction: column; }
   .button-row .text-link { align-self: flex-start; }
+  .class-signup { padding-block: 52px 62px; border-block-width: 4px; }
+  .class-signup::before { inset: 0 0 auto; width: auto; height: 7px; }
+  .class-signup__art { width: min(88vw, 390px); }
+  .class-signup__content h2 { font-size: clamp(38px, 12vw, 58px); }
+  .class-signup__button { width: 100%; box-shadow: 6px 6px 0 var(--ink); }
+  html[data-class-theme="dark"] .class-signup__button { box-shadow: 6px 6px 0 #eeeae0; }
   .section-heading { display: block; }
   .section-heading > p { margin-top: 25px; }
   .gallery-grid { grid-template-columns: 1fr; }

@@ -305,10 +305,45 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="schedule section">
-        <div>
-          <h2>Classes and Appointments</h2>
-          <p>Coming soon.</p>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(){try{var key='sif-class-theme';var previous=sessionStorage.getItem(key);var next=previous==='dark'?'light':'dark';sessionStorage.setItem(key,next);document.documentElement.dataset.classTheme=next;}catch(e){document.documentElement.dataset.classTheme='dark';}})();`,
+        }}
+      />
+      <section className="class-signup" aria-labelledby="class-signup-title">
+        <div className="class-signup__art" aria-hidden="true">
+          <Image
+            className="class-signup__logo class-signup__logo--light"
+            src="/brand/madies-lift-lab-light.jpg"
+            alt=""
+            width={1536}
+            height={1536}
+            sizes="(max-width: 900px) 82vw, 40vw"
+          />
+          <Image
+            className="class-signup__logo class-signup__logo--dark"
+            src="/brand/madies-lift-lab-dark.png"
+            alt=""
+            width={1536}
+            height={1536}
+            sizes="(max-width: 900px) 82vw, 40vw"
+          />
+        </div>
+        <div className="class-signup__content">
+          <p className="eyebrow">Classes at Southern Iron</p>
+          <h2 id="class-signup-title">Train stronger with Madie&apos;s Lift Lab.</h2>
+          <p>
+            Find the class that fits your goals and reserve your place with
+            Madie today.
+          </p>
+          <a
+            className="button class-signup__button"
+            href="https://madiesliftlab.glossgenius.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Sign Up for Classes Here
+          </a>
         </div>
       </section>
 
