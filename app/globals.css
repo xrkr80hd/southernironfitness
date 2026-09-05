@@ -562,6 +562,82 @@ footer { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; align-ite
 footer p { margin: 0; text-align: center; }
 footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
 
+.lift-lab-page, .lift-lab-admin-page, .lift-lab-recovery { min-height: 100vh; background: #050505; }
+.lift-lab-header { display: flex; min-height: 68px; align-items: center; justify-content: space-between; gap: 20px; padding: 12px clamp(20px, 5vw, 70px); border-bottom: 1px solid #333; color: #aaa; font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.lift-lab-back { display: inline-flex; min-height: 44px; align-items: center; color: #fff; }
+.lift-lab-shell { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(370px, .95fr); min-height: calc(100vh - 68px); }
+.lift-lab-brand-panel { display: flex; min-height: 780px; flex-direction: column; justify-content: space-between; padding: clamp(38px, 6vw, 86px); background: #050505; }
+.lift-lab-brand-panel > img { width: min(72%, 520px); height: auto; align-self: center; }
+.lift-lab-brand-panel h1, .lift-lab-recovery h1, .lift-lab-admin h1 { margin: 0; font-size: clamp(46px, 5.8vw, 86px); line-height: .9; text-transform: uppercase; }
+.lift-lab-brand-panel > div > p:last-child { max-width: 620px; margin: 24px 0 0; color: #bbb5a8; font-size: 18px; line-height: 1.6; }
+.lift-lab-card { align-self: center; margin: clamp(22px, 5vw, 72px); padding: clamp(28px, 4vw, 52px); border-top: 7px solid var(--rust); background: var(--paper); color: var(--ink); box-shadow: 16px 16px 0 rgba(183,71,40,.28); }
+.lift-lab-card h2 { font-size: clamp(34px, 4vw, 58px); }
+.lift-lab-card__intro { margin: 20px 0 0; color: #615e57; font-size: 16px; line-height: 1.55; }
+.lift-lab-form { display: grid; gap: 18px; margin-top: 28px; }
+.lift-lab-form label { display: grid; gap: 8px; color: #403e39; font-size: 13px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.lift-lab-form label span { color: #817c72; font-weight: 600; text-transform: none; }
+.lift-lab-form input, .lift-lab-roster select { width: 100%; min-height: 50px; padding: 10px 13px; border: 1px solid #aaa397; border-radius: 0; background: #fff; color: #10100f; font: inherit; }
+.lift-lab-form input:focus, .lift-lab-roster select:focus { outline: 3px solid rgba(183,71,40,.34); border-color: var(--rust); }
+.lift-lab-form .button:disabled, .lift-lab-class .button:disabled { cursor: not-allowed; opacity: .64; transform: none; }
+.lift-lab-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.lift-lab-form .lift-lab-check { display: flex; align-items: center; grid-template-columns: none; }
+.lift-lab-form .lift-lab-check input { width: 20px; min-height: 20px; }
+.lift-lab-form .lift-lab-disclaimer { display: grid; grid-template-columns: 22px 1fr; align-items: start; gap: 12px; padding: 16px; border: 1px solid #b8b1a5; background: #e4e0d6; text-transform: none; }
+.lift-lab-form .lift-lab-disclaimer input { width: 20px; min-height: 20px; margin-top: 2px; }
+.lift-lab-form .lift-lab-disclaimer span { color: #403e39; font-size: 12px; font-weight: 600; line-height: 1.55; }
+.lift-lab-message { margin: 22px 0 0; padding: 13px 15px; border-left: 4px solid var(--rust); background: rgba(183,71,40,.1); font-size: 14px; line-height: 1.5; }
+.lift-lab-switches { display: grid; gap: 4px; margin-top: 22px; }
+.lift-lab-switches button, .lift-lab-text-button { min-height: 44px; padding: 5px 0; border: 0; background: transparent; color: var(--rust); cursor: pointer; font-size: 13px; font-weight: 900; text-align: left; }
+.lift-lab-recovery-note { margin: 8px 0 0; color: #6f6a60; font-size: 12px; line-height: 1.5; }
+.lift-lab-dashboard { align-self: stretch; overflow: auto; }
+.lift-lab-dashboard__head { display: flex; align-items: start; justify-content: space-between; gap: 24px; }
+.lift-lab-class-list { display: grid; gap: 14px; margin-top: 32px; }
+.lift-lab-class { padding: 22px; border: 1px solid #cbc5b8; background: #fff; }
+.lift-lab-class time { color: var(--rust); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.lift-lab-class h3 { margin: 9px 0 8px; font-size: 24px; text-transform: uppercase; }
+.lift-lab-class p { color: #615e57; line-height: 1.5; }
+.lift-lab-class small { display: block; margin-bottom: 18px; color: #6f6a60; font-weight: 800; }
+.lift-lab-class .button { min-height: 44px; }
+.lift-lab-empty { padding: 34px 0; border-block: 1px solid #cbc5b8; }
+.lift-lab-empty strong { font-size: 22px; text-transform: uppercase; }
+.lift-lab-empty p { margin: 10px 0 0; color: #615e57; line-height: 1.5; }
+.lift-lab-pending > p:not(.eyebrow) { margin: 24px 0; color: #615e57; font-size: 17px; line-height: 1.6; }
+.lift-lab-dashboard > .button--outline { margin-top: 28px; border-color: #615e57; color: var(--ink); }
+.lift-lab-recovery { display: grid; place-items: center; padding: 22px; }
+.lift-lab-recovery .lift-lab-card { width: min(100%, 580px); margin: 0; }
+.lift-lab-recovery .lift-lab-card > img { display: block; width: 180px; height: 180px; margin: 0 auto 22px; object-fit: contain; background: #050505; }
+.lift-lab-recovery h1 { font-size: clamp(38px, 7vw, 60px); }
+.lift-lab-recovery .lift-lab-card > a { display: inline-flex; min-height: 44px; align-items: center; margin-top: 14px; color: var(--rust); font-weight: 900; }
+.lift-lab-admin { padding: clamp(45px, 7vw, 100px) clamp(20px, 6vw, 90px); }
+.lift-lab-admin > .button { margin-top: 24px; }
+.lift-lab-admin__title { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 42px; }
+.lift-lab-admin__title > p { max-width: 470px; margin: 0; color: #aaa598; font-size: 17px; line-height: 1.55; }
+.lift-lab-admin-grid { display: grid; grid-template-columns: minmax(300px, .75fr) minmax(0, 1.25fr); gap: 24px; }
+.lift-lab-admin .lift-lab-card { margin: 0; box-shadow: none; }
+.lift-lab-admin .lift-lab-card h2 { font-size: 34px; }
+.lift-lab-notifications { margin-bottom: 24px !important; }
+.lift-lab-notifications__title { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.lift-lab-notifications__title > strong { flex: 0 0 auto; padding: 9px 12px; background: var(--rust); color: #fff; font-size: 12px; text-transform: uppercase; }
+.lift-lab-request-list { display: grid; margin-top: 25px; }
+.lift-lab-request-list article { display: grid; grid-template-columns: minmax(230px, 1fr) auto auto; gap: 18px; align-items: center; padding: 18px 0; border-top: 1px solid #cbc5b8; }
+.lift-lab-request-list article.is-pending { border-left: 4px solid var(--rust); padding-left: 16px; }
+.lift-lab-request-list article > div:first-child { display: grid; gap: 5px; }
+.lift-lab-request-list article span, .lift-lab-request-list article small { color: #615e57; font-size: 13px; }
+.lift-lab-status { padding: 7px 9px; background: #d7d2c6; font-size: 11px !important; font-weight: 900; text-transform: uppercase; }
+.lift-lab-status--approved { background: #d6e5d2; color: #31542c !important; }
+.lift-lab-status--denied { background: #ead3cd; color: #782f1e !important; }
+.lift-lab-request-actions { display: flex; gap: 8px; }
+.lift-lab-request-actions button { min-height: 42px; padding: 0 14px; border: 1px solid var(--rust); background: var(--rust); color: #fff; cursor: pointer; font-weight: 900; text-transform: uppercase; }
+.lift-lab-request-actions button:last-child { background: transparent; color: #615e57; border-color: #aaa397; }
+.lift-lab-admin-list { display: grid; gap: 0; margin-top: 22px; }
+.lift-lab-admin-list article { display: grid; gap: 5px; padding: 17px 0; border-top: 1px solid #cbc5b8; }
+.lift-lab-admin-list time, .lift-lab-admin-list small { color: #615e57; }
+.lift-lab-roster { margin-top: 24px !important; }
+.lift-lab-roster-list { display: grid; margin-top: 24px; }
+.lift-lab-roster-list article { display: grid; grid-template-columns: minmax(230px, 1fr) 170px 180px; gap: 16px; align-items: center; padding: 16px 0; border-top: 1px solid #cbc5b8; }
+.lift-lab-roster-list article > div { display: grid; gap: 5px; }
+.lift-lab-roster-list article span { color: #615e57; font-size: 13px; }
+
 @media (max-width: 1024px) {
   .desktop-nav { display: none; }
   .site-header .header-actions { display: none; }
@@ -584,6 +660,15 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
   .gallery-grid .photo-block:nth-child(1), .gallery-grid .photo-block:nth-child(5) { grid-column: span 2; }
   footer { grid-template-columns: 1fr; text-align: center; }
   footer > .brand, footer > div:last-child { justify-content: center; }
+  .lift-lab-shell, .lift-lab-admin-grid { grid-template-columns: 1fr; }
+  .lift-lab-brand-panel { min-height: auto; gap: 32px; }
+  .lift-lab-brand-panel > img { width: min(62vw, 390px); }
+  .lift-lab-card { align-self: auto; margin-top: 0; }
+  .lift-lab-admin__title { display: grid; }
+  .lift-lab-roster-list article { grid-template-columns: 1fr 1fr; }
+  .lift-lab-roster-list article > div { grid-column: 1 / -1; }
+  .lift-lab-request-list article { grid-template-columns: 1fr auto; }
+  .lift-lab-request-actions { grid-column: 1 / -1; }
 }
 
 @media (max-width: 560px) {
@@ -597,6 +682,18 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
   .class-signup__content h2 { font-size: clamp(38px, 12vw, 58px); }
   .class-signup__button { width: 100%; box-shadow: 6px 6px 0 var(--ink); }
   html[data-class-theme="dark"] .class-signup__button { box-shadow: 6px 6px 0 #eeeae0; }
+  .lift-lab-header span { display: none; }
+  .lift-lab-brand-panel { padding: 42px 22px; text-align: center; }
+  .lift-lab-brand-panel > img { width: min(78vw, 330px); }
+  .lift-lab-brand-panel h1 { font-size: clamp(43px, 13vw, 62px); }
+  .lift-lab-brand-panel > div > p:last-child { font-size: 16px; }
+  .lift-lab-card { margin-inline: 14px; padding: 27px 20px; box-shadow: 8px 8px 0 rgba(183,71,40,.28); }
+  .lift-lab-form-row, .lift-lab-roster-list article { grid-template-columns: 1fr; }
+  .lift-lab-roster-list article > div { grid-column: auto; }
+  .lift-lab-request-list article { grid-template-columns: 1fr; }
+  .lift-lab-request-actions { grid-column: auto; }
+  .lift-lab-request-actions button { flex: 1; }
+  .lift-lab-admin { padding-inline: 14px; }
   .section-heading { display: block; }
   .section-heading > p { margin-top: 25px; }
   .gallery-grid { grid-template-columns: 1fr; }

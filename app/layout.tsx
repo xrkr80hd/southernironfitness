@@ -19,9 +19,20 @@ export const metadata: Metadata = {
   other: {
     "codex-preview": "development",
   },
+  manifest: "/manifest.webmanifest",
+  applicationName: "Southern Iron Fitness",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Southern Iron",
+  },
   icons: {
-    icon: "/brand/southern-iron-gold-flat.svg",
-    shortcut: "/brand/southern-iron-gold-flat.svg",
+    icon: [
+      { url: "/icons/southern-iron-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icons/southern-iron-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/icons/southern-iron-192.png",
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 

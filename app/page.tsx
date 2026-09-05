@@ -338,9 +338,7 @@ export default function Home() {
           </p>
           <a
             className="button class-signup__button"
-            href="https://madiesliftlab.glossgenius.com/"
-            target="_blank"
-            rel="noreferrer"
+            href="/lift-lab"
           >
             Sign Up for Classes Here
           </a>
