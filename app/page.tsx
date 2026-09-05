@@ -7,6 +7,23 @@ const googleMapsUrl =
 const googleMapsEmbedUrl =
   "https://maps.google.com/maps?hl=en&q=9338%20Highway%20165%20South%2C%20Suite%20F%2C%20Woodworth%2C%20LA%2071485&z=16&output=embed";
 
+const communitySupporters = [
+  "Divine Design",
+  "Red River Glass",
+  "Floors Unlimited of Alexandria",
+  "Tracy Electric Company, LLC",
+  "Southern Heritage",
+  "Bergeron’s Drafting & Design",
+  "Cenla Signs",
+  "Fit RX",
+  "R & S Real Estate",
+  "Donna Manuel",
+  "Timothy Freeman",
+  "Manli (“Melanie”) Teng",
+  "Travis Wilkinson @ Main Stage Media & Design",
+  "The Town of Woodworth",
+];
+
 const PhotoBlock = ({
   label,
   title,
@@ -353,6 +370,24 @@ export default function Home() {
             Open in Google Maps <span>→</span>
           </a>
         </div>
+      </section>
+
+      <section className="community-thanks" aria-labelledby="community-thanks-title">
+        <div className="community-thanks__heading">
+          <p className="eyebrow">With heartfelt thanks</p>
+          <h2 id="community-thanks-title">We couldn&apos;t have done it without you.</h2>
+          <p>
+            Southern Iron Fitness would like to sincerely thank the following
+            businesses, organizations, and individuals. Your support helped
+            bring this vision to life, and we are truly grateful to have you
+            as part of our story.
+          </p>
+        </div>
+        <ul className="supporter-grid" aria-label="Southern Iron Fitness community supporters">
+          {communitySupporters.map((supporter) => (
+            <li key={supporter}>{supporter}</li>
+          ))}
+        </ul>
       </section>
 
       <footer>
