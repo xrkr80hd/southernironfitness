@@ -98,12 +98,21 @@ export default function LiftLabPortal() {
                 and agree to this acknowledgment. I understand that Madison Rabalais, doing
                 business as Madie&apos;s Lift Lab, is an independent trainer and independent
                 business—not an employee, agent, partner, or representative of Southern
-                Iron Fitness. Southern Iron Fitness does not select, direct, supervise, or
+                Iron Fitness. Madie&apos;s Lift Lab is an independently owned and operated
+                personal-training service. Its coaching, scheduling, programs, and fees are
+                separate from Southern Iron Fitness and are not included with a Southern
+                Iron Fitness membership. Southern Iron Fitness does not select, direct, supervise, or
                 control her training methods, programming, scheduling, charges, promises,
                 or results. Any agreement for her training services is between me and
                 Madie&apos;s Lift Lab. I understand that exercise and strength training involve
                 inherent risks, including the risk of physical injury, and I voluntarily
-                choose to participate. This acknowledgment documents my informed decision
+                choose to participate. Optional progress photos are disabled unless I
+                separately opt in. If I opt in, the photos are for private progress tracking
+                by me and Madie&apos;s Lift Lab only. Madie&apos;s Lift Lab and Southern Iron Fitness
+                will not use them for advertising, social media, public display, or promotion
+                without separate written authorization, and Southern Iron Fitness master
+                administrators cannot view them. I may withdraw from photo tracking without
+                affecting my training account. This acknowledgment documents my informed decision
                 and the independent relationship described above. It does not release any
                 person or business from liability that Louisiana law does not permit to be
                 waived.

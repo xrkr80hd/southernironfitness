@@ -6,7 +6,7 @@ import LiftLabPortal from "./portal";
 
 export const metadata: Metadata = {
   title: "Madie's Lift Lab | Southern Iron Fitness",
-  description: "Create an account, view classes, and reserve your place with Madie's Lift Lab.",
+  description: "Create an account, request private training, and follow your program with Madie's Lift Lab.",
   manifest: "/lift-lab/manifest.webmanifest",
   icons: {
     icon: [
@@ -49,6 +49,10 @@ export default function LiftLabPage() {
             <p className="eyebrow">Welcome to the Lift Lab</p>
             <h1>Find your class. Build your strength.</h1>
             <p>Create one simple account to see Madie&apos;s schedule and reserve your spot.</p>
+            <aside className="lift-lab-independent-notice">
+              <strong>Independent personal training</strong>
+              <p>Madie&apos;s Lift Lab is an independently owned and operated personal-training service. Its coaching, scheduling, programs, and fees are separate from Southern Iron Fitness and are not included with a Southern Iron Fitness membership.</p>
+            </aside>
           </div>
         </div>
         <LiftLabPortal />

@@ -47,7 +47,9 @@ export default function SouthernIronAdmin() {
   const load = useCallback(async () => {
     try {
       const supabase = createClient();
-      const { data: profile } = await supabase.from("lift_lab_profiles").select("role").single();
+      const { data: authData } = await supabase.auth.getUser();
+      if (!authData.user) { setAuthorized(false); return; }
+      const { data: profile } = await supabase.from("lift_lab_profiles").select("role").eq("id", authData.user.id).single();
       if (profile?.role !== "master_admin") { setAuthorized(false); return; }
       setAuthorized(true);
       const [{ data: acknowledgments }, { data: registrations }] = await Promise.all([

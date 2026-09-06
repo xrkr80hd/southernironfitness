@@ -2,7 +2,7 @@ import { createHmac, randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
 import { createClient } from "../../../../lib/supabase/server";
 
-const acknowledgmentVersion = "2026-09-05-v2";
+const acknowledgmentVersion = "2026-09-06-v4";
 const consentCookieName = "lift_lab_consent_receipt";
 
 export const runtime = "nodejs";

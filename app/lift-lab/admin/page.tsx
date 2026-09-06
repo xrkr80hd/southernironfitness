@@ -7,7 +7,7 @@ export default function LiftLabAdminPage() {
   return (
     <main className="lift-lab-admin-page">
       <header className="lift-lab-header">
-        <Link href="/lift-lab" className="lift-lab-back">← Member view</Link>
+        <Link href="/lift-lab" className="lift-lab-back">← Account home</Link>
         <span>Madie&apos;s private dashboard</span>
       </header>
       <LiftLabAdmin />
