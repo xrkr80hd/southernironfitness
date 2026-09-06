@@ -96,7 +96,7 @@ export default function Home() {
         </a>
         <nav className="desktop-nav" aria-label="Main navigation">
           <a href="#about">The Gym</a>
-          <a href="#training">Training</a>
+          <a href="#madies-lift-lab">Training</a>
           <a href="#contact">Contact</a>
         </nav>
         <div className="header-actions">
@@ -115,7 +115,7 @@ export default function Home() {
           </summary>
           <div className="mobile-menu-panel">
             <a href="#about">The Gym</a>
-            <a href="#training">Training</a>
+            <a href="#madies-lift-lab">Training</a>
             <a href="#gymdesk">Membership</a>
             <a href="#contact">Contact</a>
             <a className="button button--small" href={gymdeskSignupUrl} target="_blank" rel="noreferrer">
@@ -310,7 +310,7 @@ export default function Home() {
           __html: `(function(){try{var key='sif-class-theme';var previous=sessionStorage.getItem(key);var next=previous==='dark'?'light':'dark';sessionStorage.setItem(key,next);document.documentElement.dataset.classTheme=next;}catch(e){document.documentElement.dataset.classTheme='dark';}})();`,
         }}
       />
-      <section className="class-signup" aria-labelledby="class-signup-title">
+      <section className="class-signup" id="madies-lift-lab" aria-labelledby="class-signup-title">
         <div className="class-signup__art" aria-hidden="true">
           <Image
             className="class-signup__logo class-signup__logo--light"

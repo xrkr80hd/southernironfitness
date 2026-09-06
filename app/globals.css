@@ -27,6 +27,7 @@
 .lift-preview__signup-fields { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .7rem; margin: 1rem 0; }
 .lift-preview__signup-fields span { padding: .85rem; border: 1px solid rgba(128,128,128,.28); border-radius: 10px; opacity: .75; }
 .lift-preview__terms { margin: 1rem 0; }
+#madies-lift-lab { scroll-margin-top: 84px; }
 .lift-photo-slots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; margin-top: 1rem; }
 .lift-photo-slots article { display: grid; gap: .3rem; min-height: 130px; align-content: center; padding: 1rem; border: 1px dashed rgba(240,142,43,.62); border-radius: 14px; background: rgba(128,128,128,.06); }
 .lift-photo-slots span { color: var(--accent, #f08e2b); font-size: .72rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
