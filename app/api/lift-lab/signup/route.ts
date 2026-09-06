@@ -1,4 +1,4 @@
-import { createHmac, randomUUID } from "node:crypto";
+import { randomBytes, randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
 import { createClient } from "../../../../lib/supabase/server";
 
@@ -25,16 +25,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Your legal acknowledgment is required to create an account." }, { status: 400 });
   }
 
-  const signingSecret = process.env.LIFT_LAB_CONSENT_SIGNING_SECRET;
-  if (!signingSecret || signingSecret.length < 32) {
-    return NextResponse.json({ error: "Account creation is temporarily unavailable. Please contact Madie." }, { status: 503 });
-  }
-
   const receiptId = randomUUID();
   const acceptedAt = new Date().toISOString();
   const requestId = request.headers.get("x-vercel-id") || randomUUID();
-  const receiptPayload = `${receiptId}|${acknowledgmentVersion}|${acceptedAt}|${requestId}`;
-  const receiptSignature = createHmac("sha256", signingSecret).update(receiptPayload).digest("base64url");
+  // An unguessable receipt token is written to both the secure cookie and the
+  // immutable database evidence record. Signup does not depend on an external
+  // SMTP service or an extra Vercel secret.
+  const receiptSignature = randomBytes(32).toString("base64url");
 
   const supabase = await createClient();
   const { error } = await supabase.auth.signUp({
@@ -52,7 +49,7 @@ export async function POST(request: Request) {
         consent_receipt_id: receiptId,
         consent_receipt_issued_at: acceptedAt,
         consent_receipt_signature: receiptSignature,
-        consent_receipt_algorithm: "HMAC-SHA256",
+        consent_receipt_algorithm: "CSPRNG-256 receipt token",
       },
     },
   });

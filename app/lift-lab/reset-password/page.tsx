@@ -23,7 +23,7 @@ export default function ResetPasswordPage() {
   return (
     <main className="lift-lab-recovery">
       <section className="lift-lab-card">
-        <Image src="/brand/madies-lift-lab-dark.png" alt="Madie's Lift Lab" width={1536} height={1536} />
+        <Image src="/brand/madies-lift-lab-dark.jpg" alt="Madie's Lift Lab" width={1536} height={1536} />
         <p className="eyebrow">Secure account recovery</p>
         <h1>Choose a new password.</h1>
         <form className="lift-lab-form" onSubmit={updatePassword}>

@@ -39,7 +39,7 @@ export default function LiftLabPage() {
       <section className="lift-lab-shell">
         <div className="lift-lab-brand-panel">
           <Image
-            src="/brand/madies-lift-lab-dark.png"
+            src="/brand/madies-lift-lab-dark.jpg"
             alt="Madie's Lift Lab"
             width={1536}
             height={1536}

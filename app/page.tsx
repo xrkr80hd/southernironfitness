@@ -322,7 +322,7 @@ export default function Home() {
           />
           <Image
             className="class-signup__logo class-signup__logo--dark"
-            src="/brand/madies-lift-lab-dark.png"
+            src="/brand/madies-lift-lab-dark.jpg"
             alt=""
             width={1536}
             height={1536}

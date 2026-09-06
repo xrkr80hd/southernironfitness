@@ -17,9 +17,6 @@ export const metadata: Metadata = {
   title: "Southern Iron Fitness | Woodworth, Louisiana",
   description:
     "Southern Iron Fitness is a premium strength and conditioning gym coming soon to Woodworth, Louisiana.",
-  other: {
-    "codex-preview": "development",
-  },
   manifest: "/manifest.webmanifest",
   applicationName: "Southern Iron Fitness",
   appleWebApp: {

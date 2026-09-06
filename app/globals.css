@@ -34,12 +34,16 @@
 .lift-photo-slots small { opacity: .7; }
 .lift-photo-consent { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem; border: 1px solid rgba(128,128,128,.28); border-radius: 14px; }
 .lift-photo-consent--active { border-color: rgba(60,180,110,.5); background: rgba(60,180,110,.08); margin-bottom: 1rem; }
+.lift-progress-photo-actions { display: flex !important; flex-wrap: wrap; justify-content: flex-end; gap: .4rem !important; }
+.lift-progress-photo-actions button { border: 1px solid rgba(240,142,43,.65); border-radius: 999px; background: transparent; color: inherit; padding: .5rem .7rem; cursor: pointer; font-size: .72rem; font-weight: 800; text-transform: capitalize; }
 
 @media (max-width: 720px) {
   .lift-preview__banner { align-items: flex-start; flex-direction: column; }
   .lift-preview__times, .lift-preview__week, .lift-photo-slots, .lift-preview__builder, .lift-preview__signup-fields { grid-template-columns: 1fr; }
   .lift-preview__week { grid-template-columns: repeat(2, 1fr); }
   .lift-preview__small { width: 100%; }
+  .lift-progress-photo-actions { justify-content: stretch; }
+  .lift-progress-photo-actions button { width: 100%; }
 }
 
 * { box-sizing: border-box; }
@@ -663,7 +667,7 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
 .lift-lab-status { padding: 7px 9px; background: #d7d2c6; font-size: 11px !important; font-weight: 900; text-transform: uppercase; }
 .lift-lab-status--approved { background: #d6e5d2; color: #31542c !important; }
 .lift-lab-status--denied { background: #ead3cd; color: #782f1e !important; }
-.lift-lab-request-actions { display: flex; gap: 8px; }
+.lift-lab-request-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .lift-lab-request-actions button { min-height: 42px; padding: 0 14px; border: 1px solid var(--rust); background: var(--rust); color: #fff; cursor: pointer; font-weight: 900; text-transform: uppercase; }
 .lift-lab-request-actions button:last-child { background: transparent; color: #615e57; border-color: #aaa397; }
 .lift-lab-admin-list { display: grid; gap: 0; margin-top: 22px; }
@@ -705,6 +709,7 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
 .lift-suite__tabs { display: flex; gap: 7px; overflow-x: auto; margin: 0 0 24px; padding: 5px; border: 1px solid #393834; background: #111; scrollbar-width: thin; }
 .lift-suite__tabs button { min-width: max-content; min-height: 44px; padding: 0 16px; border: 0; background: transparent; color: #bbb5a8; cursor: pointer; font-size: 12px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
 .lift-suite__tabs button.is-active { background: var(--rust); color: #fff; }
+.lift-suite__tabs button:focus-visible, .lift-lab-request-actions button:focus-visible, .lift-preview__small:focus-visible { outline: 3px solid rgba(183,71,40,.45); outline-offset: 2px; }
 .lift-suite__metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .lift-suite__metrics article { display: grid; gap: 7px; padding: 25px; border-top: 5px solid var(--rust); background: #1a1a18; }
 .lift-suite__metrics strong { color: #fff; font-size: clamp(34px, 5vw, 58px); line-height: 1; }
@@ -818,7 +823,7 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
   .lift-lab-roster-list article > div { grid-column: auto; }
   .lift-lab-request-list article { grid-template-columns: 1fr; }
   .lift-lab-request-actions { grid-column: auto; }
-  .lift-lab-request-actions button { flex: 1; }
+  .lift-lab-request-actions button { flex: 1 1 110px; }
   .master-admin__summary { grid-template-columns: 1fr; }
   .master-admin__summary .button { grid-column: auto; }
   .master-admin__records summary, .master-admin__service { display: grid; grid-template-columns: 1fr; }
