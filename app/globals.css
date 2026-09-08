@@ -38,10 +38,15 @@
 .lift-photo-slots small { opacity: .7; }
 .lift-photo-consent { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem; border: 1px solid rgba(128,128,128,.28); border-radius: 14px; }
 .lift-photo-consent--active { border-color: rgba(60,180,110,.5); background: rgba(60,180,110,.08); margin-bottom: 1rem; }
+.lift-photo-cropper { display: grid; gap: .8rem; }
+.lift-photo-cropper__preview { width: min(100%, 360px); aspect-ratio: 4 / 5; border: 2px solid var(--accent, #f08e2b); border-radius: 14px; background-color: #111; background-repeat: no-repeat; overflow: hidden; }
+.lift-photo-cropper__controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+.lift-photo-cropper__controls label { display: grid; gap: .35rem; }
 .lift-progress-photo-actions { display: flex !important; flex-wrap: wrap; justify-content: flex-end; gap: .4rem !important; }
 .lift-progress-photo-actions button { border: 1px solid rgba(240,142,43,.65); border-radius: 999px; background: transparent; color: inherit; padding: .5rem .7rem; cursor: pointer; font-size: .72rem; font-weight: 800; text-transform: capitalize; }
 
 @media (max-width: 720px) {
+  .lift-photo-cropper__controls { grid-template-columns: 1fr; }
   .lift-preview__slot-form, .lift-preview__slot-fields { grid-template-columns: 1fr; }
   .lift-preview__banner { align-items: flex-start; flex-direction: column; }
   .lift-preview__times, .lift-preview__week, .lift-photo-slots, .lift-preview__builder, .lift-preview__signup-fields { grid-template-columns: 1fr; }
