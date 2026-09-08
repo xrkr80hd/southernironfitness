@@ -21,6 +21,10 @@
 .lift-preview__week { grid-template-columns: repeat(7, 1fr); }
 .lift-preview__week article { display: grid; gap: .35rem; min-height: 92px; padding: .7rem; border: 1px solid rgba(128,128,128,.25); border-radius: 10px; }
 .lift-preview__week span { font-size: .78rem; opacity: .76; }
+.lift-preview__slot-form, .lift-preview__slot-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: .7rem; align-items: end; margin: 1rem 0; }
+.lift-preview__slot-fields { grid-template-columns: repeat(3, minmax(90px, 1fr)); margin: 0; }
+.lift-preview__slot-form label, .lift-preview__slot-fields label { display: grid; gap: .35rem; color: #615e57; font-size: .75rem; font-weight: 800; text-transform: uppercase; }
+.lift-preview__slot-form input, .lift-preview__slot-form select, .lift-preview__slot-fields input, .lift-preview__slot-fields select { min-width: 0; min-height: 44px; padding: .55rem; border: 1px solid #aaa397; background: #fff; color: #10100f; }
 .lift-preview__builder { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .8rem; margin: 1rem 0; }
 .lift-preview__steps { display: grid; gap: .75rem; padding-left: 1.3rem; }
 .lift-preview__privacy { padding: 1rem; border-left: 4px solid var(--accent, #f08e2b); background: rgba(240,142,43,.08); }
@@ -38,6 +42,7 @@
 .lift-progress-photo-actions button { border: 1px solid rgba(240,142,43,.65); border-radius: 999px; background: transparent; color: inherit; padding: .5rem .7rem; cursor: pointer; font-size: .72rem; font-weight: 800; text-transform: capitalize; }
 
 @media (max-width: 720px) {
+  .lift-preview__slot-form, .lift-preview__slot-fields { grid-template-columns: 1fr; }
   .lift-preview__banner { align-items: flex-start; flex-direction: column; }
   .lift-preview__times, .lift-preview__week, .lift-photo-slots, .lift-preview__builder, .lift-preview__signup-fields { grid-template-columns: 1fr; }
   .lift-preview__week { grid-template-columns: repeat(2, 1fr); }
