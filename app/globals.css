@@ -719,6 +719,10 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
 .lift-suite__tabs { display: flex; gap: 7px; overflow-x: auto; margin: 0 0 24px; padding: 5px; border: 1px solid #393834; background: #111; scrollbar-width: thin; }
 .lift-suite__tabs button { min-width: max-content; min-height: 44px; padding: 0 16px; border: 0; background: transparent; color: #bbb5a8; cursor: pointer; font-size: 12px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
 .lift-suite__tabs button.is-active { background: var(--rust); color: #fff; }
+.lift-menu-accordion { margin-bottom: 24px; border: 1px solid #393834; background: #111; }
+.lift-menu-accordion > summary { min-height: 52px; padding: 16px; cursor: pointer; color: #fff; font-size: 13px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.lift-menu-accordion[open] > summary { border-bottom: 1px solid #393834; }
+.lift-menu-accordion .lift-suite__tabs { margin: 0; border: 0; }
 .lift-suite__tabs button:focus-visible, .lift-lab-request-actions button:focus-visible, .lift-preview__small:focus-visible { outline: 3px solid rgba(183,71,40,.45); outline-offset: 2px; }
 .lift-suite__metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .lift-suite__metrics article { display: grid; gap: 7px; padding: 25px; border-top: 5px solid var(--rust); background: #1a1a18; }
@@ -746,6 +750,39 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
 .lift-suite__programs article { padding: 20px; border: 1px solid #cbc5b8; background: #fff; }
 .lift-suite__programs article > div { display: grid; gap: 4px; }
 .lift-suite__programs span, .lift-suite__programs li { color: #615e57; font-size: 13px; line-height: 1.5; }
+.lift-workout-builder { min-width: 0; }
+.lift-workout-builder__list { display: grid; gap: 18px; }
+.lift-workout-builder__exercise { min-width: 0; margin: 0; padding: 20px; border: 1px solid #b8b1a5; background: #e8e3d8; }
+.lift-workout-builder__exercise legend { padding: 0 8px; color: var(--rust); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.lift-workout-builder__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.lift-workout-builder__head > strong { font-size: 16px; text-transform: uppercase; }
+.lift-workout-builder__exercise > label, .lift-workout-builder__exercise > .lift-lab-form-row { margin-top: 14px; }
+.lift-workout-builder .button--outline { border-color: var(--rust); color: var(--rust); }
+.lift-admin-accordions { gap: 14px; }
+.lift-accordion { border: 1px solid #484640; background: #171716; color: #fff; }
+.lift-accordion > summary { display: flex; min-height: 70px; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 20px; cursor: pointer; list-style: none; border-left: 5px solid var(--rust); }
+.lift-accordion > summary::-webkit-details-marker { display: none; }
+.lift-accordion > summary::after { content: "+"; flex: 0 0 auto; color: var(--rust); font-size: 28px; font-weight: 900; }
+.lift-accordion[open] > summary::after { content: "−"; }
+.lift-accordion > summary > span { font-size: 17px; font-weight: 900; text-transform: uppercase; }
+.lift-accordion > summary > small { margin-left: auto; color: #bbb5a8; font-size: 12px; text-align: right; }
+.lift-accordion__content { padding: clamp(20px, 4vw, 36px); border-top: 1px solid #484640; background: var(--paper); color: var(--ink); }
+.lift-accordion--nested, .lift-accordion--day, .lift-accordion--client { margin-top: 18px; border-color: #b8b1a5; }
+.lift-accordion--nested > summary, .lift-accordion--day > summary, .lift-accordion--client > summary { min-height: 60px; background: #ded9ce; color: var(--ink); }
+.lift-accordion--nested > summary > small, .lift-accordion--day > summary > small, .lift-accordion--client > summary > small { color: #615e57; }
+.lift-standalone-label { display: grid; gap: 8px; color: #403e39; font-size: 13px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.lift-standalone-label select { min-height: 50px; padding: 10px 13px; border: 1px solid #aaa397; background: #fff; color: #10100f; font: inherit; }
+.lift-trainee-card { margin-top: 22px; padding: clamp(18px, 4vw, 30px); border: 1px solid #b8b1a5; background: #fff; }
+.lift-trainee-card > header { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+.lift-trainee-card > header h2 { margin: 3px 0 8px; }
+.lift-trainee-card > header span { color: #615e57; }
+.lift-workout-day-controls { margin-top: 24px; }
+.lift-workout-day-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 14px; }
+.lift-workout-day-heading > .button { min-height: 50px; }
+.lift-workout-day-controls label { display: grid; gap: 8px; color: #403e39; font-size: 13px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.lift-workout-day-controls input { min-height: 50px; padding: 10px 13px; border: 1px solid #aaa397; background: #fff; color: #10100f; font: inherit; }
+.lift-workout-days { display: grid; gap: 12px; margin-top: 22px; }
+.lift-client-note { margin: 10px 0 0; padding: 10px 12px; border-left: 3px solid var(--rust); background: #e8e3d8; color: #403e39 !important; white-space: pre-wrap; }
 .lift-suite__settings { max-width: 720px; }
 .lift-master-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .lift-master-home .button--outline { border-color: #615e57; color: var(--ink); }
@@ -760,8 +797,10 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
 .lift-client-workouts > article { display: grid; grid-template-columns: minmax(210px, 1fr) auto; gap: 14px; padding: 18px; border: 1px solid #cbc5b8; background: #fff; }
 .lift-client-workouts > article > div { display: grid; gap: 5px; }
 .lift-client-workouts span, .lift-client-workouts p { margin: 0; color: #615e57; font-size: 12px; line-height: 1.45; }
-.lift-client-workout-form { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr) auto; gap: 8px; }
-.lift-client-workout-form input { min-width: 0; min-height: 44px; padding: 8px; border: 1px solid #aaa397; }
+.lift-client-workout-form { display: grid; grid-column: 1 / -1; gap: 10px; }
+.lift-client-workout-fields { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.lift-client-workout-form input, .lift-client-workout-form select, .lift-client-workout-form textarea { min-width: 0; min-height: 44px; padding: 8px; border: 1px solid #aaa397; background: #fff; color: var(--ink); font: inherit; }
+.lift-client-workout-form textarea { resize: vertical; }
 .lift-client-workout-form button, .lift-client-payment-form button { min-height: 44px; padding: 0 15px; border: 0; background: var(--rust); color: #fff; cursor: pointer; font-weight: 900; text-transform: uppercase; }
 .lift-client-payment { display: grid; grid-template-columns: minmax(210px, 1fr) auto; gap: 14px; align-items: start; padding: 22px; border: 1px solid #cbc5b8; background: #fff; }
 .lift-client-payment > div:first-child { display: grid; gap: 5px; }
@@ -810,6 +849,7 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
   .lift-suite__metrics { grid-template-columns: 1fr 1fr; }
   .lift-client-workout-form { grid-template-columns: 1fr 1fr; }
   .lift-client-workout-form button { grid-column: 1 / -1; }
+  .lift-client-workout-fields { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 560px) {
@@ -845,6 +885,12 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
   .lift-suite__list .lift-lab-request-actions, .lift-client-workout-form, .lift-client-payment > .button, .lift-client-payment-form { grid-column: auto; }
   .lift-client-workout-form { grid-template-columns: 1fr; }
   .lift-client-workout-form button { grid-column: auto; }
+  .lift-client-workout-fields { grid-template-columns: 1fr; }
+  .lift-accordion > summary { align-items: flex-start; flex-direction: column; gap: 5px; padding: 14px 16px; }
+  .lift-accordion > summary > small { margin-left: 0; text-align: left; }
+  .lift-accordion > summary::after { position: absolute; align-self: flex-end; }
+  .lift-trainee-card > header { flex-direction: column; }
+  .lift-workout-day-heading { grid-template-columns: 1fr; }
   .lift-master-actions { align-items: stretch; flex-direction: column; }
   .lift-master-actions .button { justify-content: center; }
   .section-heading { display: block; }
