@@ -8,6 +8,8 @@
 - Accordion summaries must clearly state what is inside and show useful status or item counts when available.
 - Keep only the workflow currently being used open by default, especially on mobile.
 - Preserve the same information hierarchy and functionality on desktop and mobile.
+- Calendars must fit the phone viewport without horizontal scrolling. A date must be directly tappable and open a compact day editor.
+- Repeated scheduling should support copying one day's time slots and pasting them onto another selected day.
 
 ## Lift Lab workout prescriptions
 

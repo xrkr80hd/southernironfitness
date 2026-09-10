@@ -729,19 +729,26 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
 .lift-suite__metrics strong { color: #fff; font-size: clamp(34px, 5vw, 58px); line-height: 1; }
 .lift-suite__metrics span { color: #aaa598; font-size: 11px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
 .lift-suite__stack { display: grid; gap: 24px; }
-.lift-suite__calendar-card { overflow-x: auto; }
+.lift-suite__calendar-card { overflow: hidden; }
 .lift-suite__calendar-head { display: flex; min-width: 650px; align-items: center; justify-content: space-between; gap: 18px; }
 .lift-suite__calendar-head button { width: 44px; height: 44px; border: 1px solid #aaa397; background: transparent; color: var(--ink); cursor: pointer; font-size: 22px; }
 .lift-suite__calendar-head h2 { margin: 0; text-align: center; }
 .lift-suite__weekdays, .lift-suite__calendar { display: grid; min-width: 650px; grid-template-columns: repeat(7, 1fr); }
 .lift-suite__weekdays { margin-top: 24px; background: #171716; color: #eeeae0; }
 .lift-suite__weekdays strong { padding: 10px 5px; font-size: 10px; text-align: center; text-transform: uppercase; }
-.lift-suite__calendar article { display: grid; min-height: 92px; align-content: start; gap: 4px; padding: 9px; border-right: 1px solid #cbc5b8; border-bottom: 1px solid #cbc5b8; background: #fff; }
-.lift-suite__calendar article:nth-child(7n+1) { border-left: 1px solid #cbc5b8; }
-.lift-suite__calendar article.is-muted { background: #ddd8cd; color: #8b857b; }
-.lift-suite__calendar article > span { font-weight: 900; }
+.lift-suite__calendar > button { display: grid; min-height: 92px; align-content: start; gap: 4px; padding: 9px; border: 0; border-right: 1px solid #cbc5b8; border-bottom: 1px solid #cbc5b8; background: #fff; color: var(--ink); cursor: pointer; font: inherit; text-align: left; }
+.lift-suite__calendar > button:nth-child(7n+1) { border-left: 1px solid #cbc5b8; }
+.lift-suite__calendar > button.is-muted { background: #ddd8cd; color: #8b857b; }
+.lift-suite__calendar > button.is-selected { position: relative; z-index: 1; outline: 3px solid var(--rust); outline-offset: -3px; background: #f3e5d9; }
+.lift-suite__calendar > button > span { font-weight: 900; }
 .lift-suite__calendar small { color: #6f6a60; font-size: 10px; }
 .lift-suite__calendar b { color: var(--rust); font-size: 10px; text-transform: uppercase; }
+.lift-calendar-hint { margin: 14px 0 8px; color: #615e57; font-size: 13px; }
+.lift-calendar-editor { display: grid; gap: 14px; }
+.lift-calendar-selected { padding: 20px; border-left: 5px solid var(--rust); background: #171716; color: #fff; }
+.lift-calendar-selected > span { display: block; color: #aaa598; font-size: 11px; font-weight: 900; text-transform: uppercase; }
+.lift-calendar-selected > strong { display: block; margin-top: 5px; font-size: 22px; }
+.lift-calendar-selected .button--outline { border-color: #aaa598; color: #fff; }
 .lift-suite__list { display: grid; margin-top: 22px; }
 .lift-suite__list > article { display: grid; grid-template-columns: minmax(210px, 1fr) auto auto; gap: 14px; align-items: center; padding: 17px 0; border-top: 1px solid #cbc5b8; }
 .lift-suite__list > article > div:first-child { display: grid; gap: 5px; }
@@ -880,6 +887,13 @@ footer > div:last-child { display: flex; justify-content: end; gap: 20px; }
   .lift-lab-cookie-notice { right: 10px; bottom: 10px; width: calc(100vw - 20px); align-items: stretch; flex-direction: column; }
   .lift-lab-cookie-notice button { width: 100%; }
   .lift-lab-admin { padding-inline: 14px; }
+  .lift-suite__calendar-head, .lift-suite__weekdays, .lift-suite__calendar { min-width: 0; width: 100%; }
+  .lift-suite__calendar-card { margin-inline: 0; padding-inline: 10px; }
+  .lift-suite__calendar-head h2 { font-size: clamp(24px, 8vw, 34px); }
+  .lift-suite__calendar > button { min-width: 0; min-height: 58px; gap: 1px; padding: 5px 3px; overflow: hidden; }
+  .lift-suite__calendar > button > span { font-size: 12px; }
+  .lift-suite__calendar small, .lift-suite__calendar b { overflow: hidden; font-size: 8px; line-height: 1.1; text-overflow: ellipsis; white-space: nowrap; }
+  .lift-calendar-selected .lift-master-actions { flex-direction: column; }
   .lift-suite__metrics { grid-template-columns: 1fr; }
   .lift-suite__list > article, .lift-client-workouts > article, .lift-client-payment { grid-template-columns: 1fr; }
   .lift-suite__list .lift-lab-request-actions, .lift-client-workout-form, .lift-client-payment > .button, .lift-client-payment-form { grid-column: auto; }
