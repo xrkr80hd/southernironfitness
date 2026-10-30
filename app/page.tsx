@@ -129,7 +129,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-content">
-          <p className="eyebrow">Opening soon · Woodworth, Louisiana</p>
+          <p className="eyebrow">Now Open · Woodworth, Louisiana</p>
           <h1>
             Built for the
             <span>strong.</span>
@@ -173,7 +173,7 @@ export default function Home() {
         </div>
         <div className="intro-copy">
           <p>
-            Southern Iron Fitness is being built around excellent equipment,
+            Southern Iron Fitness is built around excellent equipment,
             focused training, and a community that expects more from itself.
           </p>
           <a className="text-link" href="#training">
