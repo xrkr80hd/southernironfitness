@@ -208,7 +208,22 @@ h1 span { display: block; color: var(--rust); }
 .button-row { display: flex; align-items: center; gap: 28px; margin-top: 36px; }
 .text-link { font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; border-bottom: 1px solid #55534d; padding-bottom: 7px; }
 .text-link span { color: var(--rust); }
-.hero-facts { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-top: 68px; color: #7e7a70; font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+
+.access-guide { margin-top: 32px; color: var(--paper); }
+.access-guide__accordion { border-block: 1px solid var(--line); }
+.access-guide__accordion summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 72px; padding-block: 20px; cursor: pointer; list-style: none; font-size: clamp(20px, 2.5vw, 30px); font-weight: 800; line-height: 1.2; }
+.access-guide__accordion summary::-webkit-details-marker { display: none; }
+.access-guide__accordion summary:focus-visible { outline: 2px solid var(--rust); outline-offset: 4px; }
+.access-guide__toggle { flex: 0 0 12px; width: 12px; height: 12px; margin-right: 4px; border-right: 2px solid var(--rust); border-bottom: 2px solid var(--rust); transform: rotate(45deg); }
+.access-guide__accordion[open] .access-guide__toggle { transform: rotate(225deg); }
+.access-guide__body { max-width: 760px; padding-bottom: 28px; }
+.access-guide__lead { margin: 0 0 24px; font-size: 17px; line-height: 1.6; }
+.access-guide__steps { margin: 0; padding: 0; list-style: none; counter-reset: access-step; }
+.access-guide__steps li { position: relative; counter-increment: access-step; padding: 22px 0 22px 58px; border-top: 1px solid var(--line); }
+.access-guide__steps li::before { content: counter(access-step, decimal-leading-zero); position: absolute; left: 0; top: 20px; color: var(--rust); font-size: 25px; font-weight: 800; }
+.access-guide__steps h3 { margin: 0 0 7px; font-size: 20px; line-height: 1.25; }
+.access-guide__steps p { margin: 0; color: #cbc5b8; font-size: 16px; line-height: 1.6; }
+.access-guide__note { margin: 10px 0 0; padding: 18px 20px; border-left: 3px solid var(--rust); background: rgba(183,71,40,.12); font-size: 16px; line-height: 1.6; }
 
 .photo-block {
   position: relative; display: flex; flex-direction: column; justify-content: space-between;
