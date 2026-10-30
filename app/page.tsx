@@ -149,11 +149,37 @@ export default function Home() {
               Explore the gym <span>↓</span>
             </a>
           </div>
-          <div className="hero-facts">
-            <span>Highway 165</span>
-            <span>Woodworth Plaza</span>
-            <span>Strength · Discipline · Community</span>
-          </div>
+          <section className="access-guide" id="gym-access" aria-label="Gym access instructions">
+            <details className="access-guide__accordion">
+              <summary>How to Access the Gym 24/7<span className="access-guide__toggle" aria-hidden="true" /></summary>
+              <div className="access-guide__body">
+              <p className="access-guide__lead">Use the Gymdesk Members app to unlock the door, any time of day.</p>
+              <ol className="access-guide__steps" id="access-steps">
+                <li>
+                  <h3>Download the app</h3>
+                  <p>Search for <strong>Gymdesk – Members App</strong> in the App Store or Google Play.</p>
+                </li>
+                <li>
+                  <h3>Log in</h3>
+                  <p>Use your existing member account.</p>
+                </li>
+                <li>
+                  <h3>Open Door Access</h3>
+                  <p>Tap <strong>Door Access</strong> at the bottom left of the app.</p>
+                </li>
+                <li>
+                  <h3>Select your door</h3>
+                  <p>Choose <strong>Cardio Door F</strong> for cardio equipment or <strong>Legs Door E</strong> for leg equipment.</p>
+                </li>
+                <li>
+                  <h3>Tap Unlock</h3>
+                  <p>Unlock the door through the app and head inside.</p>
+                </li>
+              </ol>
+              <p className="access-guide__note"><strong>Bring your phone.</strong> You’ll need the Gymdesk app to unlock the door during unstaffed hours.</p>
+              </div>
+            </details>
+          </section>
         </div>
         <PhotoBlock
           tall
@@ -304,6 +330,8 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+
 
       <script
         dangerouslySetInnerHTML={{
