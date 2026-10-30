@@ -154,6 +154,46 @@ export default function Home() {
               <summary>How to Access the Gym 24/7<span className="access-guide__toggle" aria-hidden="true" /></summary>
               <div className="access-guide__body">
               <p className="access-guide__lead">Use the Gymdesk Members app to unlock the door, any time of day.</p>
+              <figure className="access-visual" aria-label="Visual guide: open Door Access, select your door, then tap Unlock">
+                <figcaption>Once you’re logged in</figcaption>
+                <div className="access-visual__flow">
+                  <div className="access-visual__panel">
+                    <span className="access-visual__label">01 · Find Door Access</span>
+                    <div className="access-visual__screen">
+                      <span className="access-visual__screen-title">App menu</span>
+                      <div className="access-visual__menu">
+                        <span>Check In</span><span>Book Classes</span>
+                        <span>My Account</span><span>Memberships</span>
+                        <span className="access-visual__selected">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3" /></svg>
+                          Door Access
+                        </span><span>More</span>
+                      </div>
+                    </div>
+                    <span className="access-visual__hint">Tap the bottom-left tile</span>
+                  </div>
+                  <span className="access-visual__arrow" aria-hidden="true">↓</span>
+                  <div className="access-visual__panel">
+                    <span className="access-visual__label">02 · Choose your entrance</span>
+                    <div className="access-visual__screen">
+                      <span className="access-visual__screen-title">Door Access</span>
+                      <div className="access-visual__door"><span><strong>Cardio Door F</strong><small>Cardio equipment</small></span><span aria-hidden="true">›</span></div>
+                      <div className="access-visual__door"><span><strong>Legs Door E</strong><small>Leg equipment</small></span><span aria-hidden="true">›</span></div>
+                    </div>
+                    <span className="access-visual__hint">Select the door you’re entering</span>
+                  </div>
+                  <span className="access-visual__arrow" aria-hidden="true">↓</span>
+                  <div className="access-visual__panel">
+                    <span className="access-visual__label">03 · Unlock the door</span>
+                    <div className="access-visual__screen access-visual__unlock">
+                      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><rect x="11" y="21" width="26" height="22" rx="3" /><path d="M17 21V12a8 8 0 0 1 16 0M24 29v6" /></svg>
+                      <span className="access-visual__unlock-label">Unlock</span>
+                    </div>
+                    <span className="access-visual__hint">Tap Unlock in the Gymdesk app</span>
+                  </div>
+                </div>
+                <p className="access-visual__caption">Illustrated guide · Use these controls in the Gymdesk app.</p>
+              </figure>
               <ol className="access-guide__steps" id="access-steps">
                 <li>
                   <h3>Download the app</h3>
