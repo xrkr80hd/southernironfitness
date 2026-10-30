@@ -218,6 +218,26 @@ h1 span { display: block; color: var(--rust); }
 .access-guide__accordion[open] .access-guide__toggle { transform: rotate(225deg); }
 .access-guide__body { max-width: 760px; padding-bottom: 28px; }
 .access-guide__lead { margin: 0 0 24px; font-size: 17px; line-height: 1.6; }
+.access-visual { margin: 0 0 28px; padding: clamp(16px, 3vw, 28px); background: #eeeae0; color: #10100f; border-radius: 4px; }
+.access-visual figcaption { margin-bottom: 20px; font-size: 19px; font-weight: 800; }
+.access-visual__flow { max-width: 360px; margin-inline: auto; }
+.access-visual__label { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 800; letter-spacing: .035em; text-transform: uppercase; }
+.access-visual__screen { padding: 16px; border: 1px solid #c6c0b4; border-radius: 8px; background: #faf9f5; }
+.access-visual__screen-title { display: block; margin-bottom: 14px; font-size: 14px; font-weight: 800; }
+.access-visual__menu { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.access-visual__menu > span { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 12px 4px; background: #e8e5dd; font-size: 12px; text-align: center; }
+.access-visual__menu .access-visual__selected { background: #fff4ed; outline: 2px solid #b74728; outline-offset: -2px; color: #7f2b16; font-weight: 800; }
+.access-visual__selected svg { width: 25px; height: 25px; }
+.access-visual__hint { display: block; margin-top: 10px; font-size: 12px; color: #545047; }
+.access-visual__arrow { display: block; margin: 12px 0; color: #b74728; font-size: 28px; text-align: center; }
+.access-visual__door { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 0; border-top: 1px solid #d5d0c4; }
+.access-visual__door strong { font-size: 15px; }
+.access-visual__door small { display: block; margin-top: 3px; font-size: 12px; color: #625d53; }
+.access-visual__door > span:last-child { color: #b74728; font-size: 28px; }
+.access-visual__unlock { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 24px 16px; }
+.access-visual__unlock svg { width: 56px; height: 56px; color: #26704c; }
+.access-visual__unlock-label { display: block; width: 100%; padding: 12px; background: #26704c; color: white; font-size: 16px; font-weight: 800; text-align: center; border-radius: 4px; }
+.access-visual__caption { margin: 20px 0 0; color: #625d53; font-size: 11px; line-height: 1.5; }
 .access-guide__steps { margin: 0; padding: 0; list-style: none; counter-reset: access-step; }
 .access-guide__steps li { position: relative; counter-increment: access-step; padding: 22px 0 22px 58px; border-top: 1px solid var(--line); }
 .access-guide__steps li::before { content: counter(access-step, decimal-leading-zero); position: absolute; left: 0; top: 20px; color: var(--rust); font-size: 25px; font-weight: 800; }
