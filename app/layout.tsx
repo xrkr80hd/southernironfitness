@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.southernironfitness.com"),
   title: "Southern Iron Fitness | Woodworth, Louisiana",
   description:
-    "Southern Iron Fitness is a premium strength and conditioning gym coming soon to Woodworth, Louisiana.",
+    "Southern Iron Fitness is a premium strength and conditioning gym in Woodworth, Louisiana.",
   manifest: "/manifest.webmanifest",
   applicationName: "Southern Iron Fitness",
   appleWebApp: {
